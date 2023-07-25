@@ -1,11 +1,11 @@
-package com.osckorea.webAdmin.global.security;
+package com.osckorea.webadmin.global.security;
 
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.osckorea.webAdmin.starter.user.domain.User;
+import com.osckorea.webadmin.starter.user.domain.User;
 
 import java.util.ArrayList;
 import java.util.Collection;

@@ -6,7 +6,7 @@ profiles:
       local:
         push: true # false는 로컬 테스트
       artifacts:
-        - image: oscka/api-start
+        - image: oscka/web-admin
           jib:
             args:
               - -DskipTests

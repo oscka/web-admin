@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.global.util.damo;
+package com.osckorea.webadmin.global.util.damo;
 
 public interface DamoScpService {
 

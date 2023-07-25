@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.starter.user.controller;
+package com.osckorea.webadmin.starter.user.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -8,8 +8,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 
-import com.osckorea.webAdmin.global.api.ApiResponseDto;
-import com.osckorea.webAdmin.starter.user.service.AdminService;
+import com.osckorea.webadmin.global.api.ApiResponseDto;
+import com.osckorea.webadmin.starter.user.service.AdminService;
 
 import java.util.UUID;
 

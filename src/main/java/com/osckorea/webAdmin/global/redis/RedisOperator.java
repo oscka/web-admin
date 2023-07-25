@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.global.redis;
+package com.osckorea.webadmin.global.redis;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

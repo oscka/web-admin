@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.starter.user.kafka.event;
+package com.osckorea.webadmin.starter.user.kafka.event;
 
 import lombok.*;
 

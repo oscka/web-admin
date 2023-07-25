@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.starter.user.repository;
+package com.osckorea.webadmin.starter.user.repository;
 
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jdbc.repository.query.Modifying;
@@ -7,9 +7,9 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.osckorea.webAdmin.global.enums.UserStatus;
-import com.osckorea.webAdmin.global.util.jdbc.WithInsert;
-import com.osckorea.webAdmin.starter.user.domain.User;
+import com.osckorea.webadmin.global.enums.UserStatus;
+import com.osckorea.webadmin.global.util.jdbc.WithInsert;
+import com.osckorea.webadmin.starter.user.domain.User;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.global.config;
+package com.osckorea.webadmin.global.config;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.jsontype.BasicPolymorphicTypeValidator;
 import com.fasterxml.jackson.databind.jsontype.PolymorphicTypeValidator;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import com.osckorea.webAdmin.global.properties.CacheProperties;
+import com.osckorea.webadmin.global.properties.CacheProperties;
 
 import io.lettuce.core.ClientOptions;
 import io.lettuce.core.cluster.ClusterClientOptions;

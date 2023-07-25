@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.global.config;
+package com.osckorea.webadmin.global.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

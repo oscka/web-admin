@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.global.security;
+package com.osckorea.webadmin.global.security;
 
 public class SecurityConstants {
 

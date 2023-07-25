@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.global.aop;
+package com.osckorea.webadmin.global.aop;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,10 +18,10 @@ import java.lang.reflect.Method;
 @Component
 public class CommonLogHandler {
 
-    @Pointcut("@annotation(com.osckorea.webAdmin.global.annotation.CustomLog)")
+    @Pointcut("@annotation(com.osckorea.webadmin.global.annotation.CustomLog)")
     public void customLog(){}
 
-    @Pointcut("@annotation(com.osckorea.webAdmin.global.annotation.CustomErrorLog)")
+    @Pointcut("@annotation(com.osckorea.webadmin.global.annotation.CustomErrorLog)")
     public void customErrorLog(){}
 
     @AfterReturning("customLog()")

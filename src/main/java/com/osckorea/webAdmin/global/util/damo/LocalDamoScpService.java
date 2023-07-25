@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.global.util.damo;
+package com.osckorea.webadmin.global.util.damo;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;

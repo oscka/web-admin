@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.global.annotation;
+package com.osckorea.webadmin.global.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

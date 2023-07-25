@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.global.core;
+package com.osckorea.webadmin.global.core;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

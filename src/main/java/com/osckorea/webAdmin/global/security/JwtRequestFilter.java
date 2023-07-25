@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.global.security;
+package com.osckorea.webadmin.global.security;
 
 import io.jsonwebtoken.*;
 import lombok.extern.slf4j.Slf4j;
@@ -9,8 +9,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.springframework.util.StringUtils;
 
-import com.osckorea.webAdmin.global.enums.UserRole;
-import com.osckorea.webAdmin.starter.user.domain.User;
+import com.osckorea.webadmin.global.enums.UserRole;
+import com.osckorea.webadmin.starter.user.domain.User;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;

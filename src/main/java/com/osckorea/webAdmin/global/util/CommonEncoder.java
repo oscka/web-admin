@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.global.util;
+package com.osckorea.webadmin.global.util;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;

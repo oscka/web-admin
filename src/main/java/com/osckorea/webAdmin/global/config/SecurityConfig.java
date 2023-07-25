@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.global.config;
+package com.osckorea.webadmin.global.config;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,10 +18,10 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 import org.springframework.security.web.header.writers.frameoptions.XFrameOptionsHeaderWriter;
 
-import com.osckorea.webAdmin.global.exception.Exception401;
-import com.osckorea.webAdmin.global.exception.Exception403;
-import com.osckorea.webAdmin.global.security.FilterResponseUtil;
-import com.osckorea.webAdmin.global.security.JwtRequestFilter;
+import com.osckorea.webadmin.global.exception.Exception401;
+import com.osckorea.webadmin.global.exception.Exception403;
+import com.osckorea.webadmin.global.security.FilterResponseUtil;
+import com.osckorea.webadmin.global.security.JwtRequestFilter;
 
 @Slf4j
 @RequiredArgsConstructor

@@ -1,6 +1,6 @@
-package com.osckorea.webAdmin.global.util;
+package com.osckorea.webadmin.global.util;
 
-import com.osckorea.webAdmin.global.core.ApplicationContextProvider;
+import com.osckorea.webadmin.global.core.ApplicationContextProvider;
 
 public class CommonBeanUtil {
 

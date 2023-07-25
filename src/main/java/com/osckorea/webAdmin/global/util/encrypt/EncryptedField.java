@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.global.util.encrypt;
+package com.osckorea.webadmin.global.util.encrypt;
 
 import java.util.Arrays;
 import java.util.Base64;

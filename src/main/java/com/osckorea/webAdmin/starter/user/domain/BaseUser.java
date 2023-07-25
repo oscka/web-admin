@@ -1,9 +1,9 @@
-package com.osckorea.webAdmin.starter.user.domain;
+package com.osckorea.webadmin.starter.user.domain;
 
 import lombok.Builder;
 import lombok.Value;
 
-import com.osckorea.webAdmin.global.enums.UserRole;
+import com.osckorea.webadmin.global.enums.UserRole;
 
 import javax.validation.constraints.NotNull;
 

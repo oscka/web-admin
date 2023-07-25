@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.starter.user.domain;
+package com.osckorea.webadmin.starter.user.domain;
 
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -10,9 +10,9 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
-import com.osckorea.webAdmin.global.enums.UserRole;
-import com.osckorea.webAdmin.global.enums.UserStatus;
-import com.osckorea.webAdmin.starter.user.dto.UserDto;
+import com.osckorea.webadmin.global.enums.UserRole;
+import com.osckorea.webadmin.global.enums.UserStatus;
+import com.osckorea.webadmin.starter.user.dto.UserDto;
 
 import java.io.Serializable;
 import java.time.Instant;

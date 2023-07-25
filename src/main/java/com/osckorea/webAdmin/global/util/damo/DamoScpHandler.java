@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.global.util.damo;
+package com.osckorea.webadmin.global.util.damo;
 
 import org.springframework.stereotype.Component;
 

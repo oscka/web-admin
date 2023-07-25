@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.global.config;
+package com.osckorea.webadmin.global.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +12,7 @@ import org.springframework.data.jdbc.repository.config.EnableJdbcAuditing;
 import org.springframework.data.relational.core.mapping.event.BeforeSaveCallback;
 import org.springframework.lang.Nullable;
 
-import com.osckorea.webAdmin.global.util.encrypt.*;
+import com.osckorea.webadmin.global.util.encrypt.*;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;

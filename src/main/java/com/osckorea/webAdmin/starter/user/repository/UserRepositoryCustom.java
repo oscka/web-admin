@@ -1,8 +1,8 @@
-package com.osckorea.webAdmin.starter.user.repository;
+package com.osckorea.webadmin.starter.user.repository;
 
 import java.util.UUID;
 
-import com.osckorea.webAdmin.starter.user.domain.User;
+import com.osckorea.webadmin.starter.user.domain.User;
 
 public interface UserRepositoryCustom {
 

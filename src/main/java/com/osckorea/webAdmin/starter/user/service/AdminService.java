@@ -1,14 +1,14 @@
-package com.osckorea.webAdmin.starter.user.service;
+package com.osckorea.webadmin.starter.user.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.osckorea.webAdmin.global.enums.UserStatus;
-import com.osckorea.webAdmin.global.exception.Exception404;
-import com.osckorea.webAdmin.starter.user.domain.User;
-import com.osckorea.webAdmin.starter.user.dto.UserDto;
-import com.osckorea.webAdmin.starter.user.repository.UserRepository;
+import com.osckorea.webadmin.global.enums.UserStatus;
+import com.osckorea.webadmin.global.exception.Exception404;
+import com.osckorea.webadmin.starter.user.domain.User;
+import com.osckorea.webadmin.starter.user.dto.UserDto;
+import com.osckorea.webadmin.starter.user.repository.UserRepository;
 
 import java.util.List;
 import java.util.UUID;

@@ -1,10 +1,10 @@
-package com.osckorea.webAdmin.starter.user.feign;
+package com.osckorea.webadmin.starter.user.feign;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.osckorea.webAdmin.starter.user.dto.UserDto;
+import com.osckorea.webadmin.starter.user.dto.UserDto;
 
 import java.util.Map;
 

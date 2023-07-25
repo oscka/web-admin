@@ -1,10 +1,10 @@
-package com.osckorea.webAdmin.global.exception;
+package com.osckorea.webadmin.global.exception;
 
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
-import com.osckorea.webAdmin.global.api.ApiResponseDto;
-import com.osckorea.webAdmin.global.api.ValidDto;
+import com.osckorea.webadmin.global.api.ApiResponseDto;
+import com.osckorea.webadmin.global.api.ValidDto;
 
 // 유효성 검사 실패, 잘못된 파라메터 요청
 @Getter

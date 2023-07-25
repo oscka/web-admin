@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.global.exception;
+package com.osckorea.webadmin.global.exception;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -10,8 +10,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.osckorea.webAdmin.global.annotation.CustomErrorLog;
-import com.osckorea.webAdmin.global.api.ApiResponseDto;
+import com.osckorea.webadmin.global.annotation.CustomErrorLog;
+import com.osckorea.webadmin.global.api.ApiResponseDto;
 
 @Slf4j
 @RequiredArgsConstructor

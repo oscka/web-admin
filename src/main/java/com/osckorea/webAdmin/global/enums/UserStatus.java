@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.global.enums;
+package com.osckorea.webadmin.global.enums;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

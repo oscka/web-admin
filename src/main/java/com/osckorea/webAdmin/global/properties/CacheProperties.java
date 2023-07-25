@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.global.properties;
+package com.osckorea.webadmin.global.properties;
 
 import lombok.Getter;
 import org.springframework.boot.context.properties.ConfigurationProperties;

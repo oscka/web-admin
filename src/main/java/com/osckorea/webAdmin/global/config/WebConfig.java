@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.global.config;
+package com.osckorea.webadmin.global.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.MessageSource;

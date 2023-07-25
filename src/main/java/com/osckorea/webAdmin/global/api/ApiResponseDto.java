@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.global.api;
+package com.osckorea.webadmin.global.api;
 
 import lombok.Getter;
 import lombok.ToString;

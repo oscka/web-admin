@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.global.util;
+package com.osckorea.webadmin.global.util;
 
 import java.text.DateFormat;
 import java.text.ParseException;

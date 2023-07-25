@@ -1,10 +1,10 @@
-package com.osckorea.webAdmin.starter.user.repository;
+package com.osckorea.webadmin.starter.user.repository;
 
 import org.springframework.dao.TransientDataAccessResourceException;
 import org.springframework.data.jdbc.core.JdbcAggregateOperations;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.osckorea.webAdmin.starter.user.domain.User;
+import com.osckorea.webadmin.starter.user.domain.User;
 
 import java.util.UUID;
 

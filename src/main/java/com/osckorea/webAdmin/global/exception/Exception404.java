@@ -1,9 +1,9 @@
-package com.osckorea.webAdmin.global.exception;
+package com.osckorea.webadmin.global.exception;
 
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
-import com.osckorea.webAdmin.global.api.ApiResponseDto;
+import com.osckorea.webadmin.global.api.ApiResponseDto;
 
 // resource 를 찾을 수 없음
 @Getter

@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.starter.user.kafka;
+package com.osckorea.webadmin.starter.user.kafka;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -7,8 +7,8 @@ import org.springframework.integration.support.MessageBuilder;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.stereotype.Component;
 
-import com.osckorea.webAdmin.global.exception.Exception500;
-import com.osckorea.webAdmin.starter.user.kafka.event.UserFindEvent;
+import com.osckorea.webadmin.global.exception.Exception500;
+import com.osckorea.webadmin.starter.user.kafka.event.UserFindEvent;
 
 import java.util.UUID;
 

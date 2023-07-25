@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.global.util.jdbc;
+package com.osckorea.webadmin.global.util.jdbc;
 
 import org.springframework.data.jdbc.core.mapping.AggregateReference;
 

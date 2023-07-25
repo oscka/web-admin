@@ -1,20 +1,20 @@
-package com.osckorea.webAdmin.starter.user.service;
+package com.osckorea.webadmin.starter.user.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import com.osckorea.webAdmin.global.annotation.CustomLog;
-import com.osckorea.webAdmin.global.exception.Exception400;
-import com.osckorea.webAdmin.global.exception.Exception404;
-import com.osckorea.webAdmin.global.redis.RedisOperator;
-import com.osckorea.webAdmin.global.util.damo.DamoScpHandler;
-import com.osckorea.webAdmin.starter.user.domain.User;
-import com.osckorea.webAdmin.starter.user.dto.UserDto;
-import com.osckorea.webAdmin.starter.user.feign.AuthFeignClient;
-import com.osckorea.webAdmin.starter.user.kafka.UserKafkaProducer;
-import com.osckorea.webAdmin.starter.user.kafka.event.UserFindEvent;
-import com.osckorea.webAdmin.starter.user.repository.UserRepository;
+import com.osckorea.webadmin.global.annotation.CustomLog;
+import com.osckorea.webadmin.global.exception.Exception400;
+import com.osckorea.webadmin.global.exception.Exception404;
+import com.osckorea.webadmin.global.redis.RedisOperator;
+import com.osckorea.webadmin.global.util.damo.DamoScpHandler;
+import com.osckorea.webadmin.starter.user.domain.User;
+import com.osckorea.webadmin.starter.user.dto.UserDto;
+import com.osckorea.webadmin.starter.user.feign.AuthFeignClient;
+import com.osckorea.webadmin.starter.user.kafka.UserKafkaProducer;
+import com.osckorea.webadmin.starter.user.kafka.event.UserFindEvent;
+import com.osckorea.webadmin.starter.user.repository.UserRepository;
 
 import java.util.Map;
 import java.util.Optional;

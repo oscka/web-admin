@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.global.util.encrypt;
+package com.osckorea.webadmin.global.util.encrypt;
 
 public interface Encryptor {
 	EncryptedField encrypt(String text);

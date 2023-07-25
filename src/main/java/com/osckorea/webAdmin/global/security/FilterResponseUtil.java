@@ -1,10 +1,10 @@
-package com.osckorea.webAdmin.global.security;
+package com.osckorea.webadmin.global.security;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 
-import com.osckorea.webAdmin.global.api.ApiResponseDto;
-import com.osckorea.webAdmin.global.util.CustomObjectMapper;
+import com.osckorea.webadmin.global.api.ApiResponseDto;
+import com.osckorea.webadmin.global.util.CustomObjectMapper;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;

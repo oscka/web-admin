@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.starter.user.controller;
+package com.osckorea.webadmin.starter.user.controller;
 
 import java.util.UUID;
 
@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.osckorea.webAdmin.global.api.ApiResponseDto;
-import com.osckorea.webAdmin.starter.user.dto.UserDto;
-import com.osckorea.webAdmin.starter.user.service.UserService;
+import com.osckorea.webadmin.global.api.ApiResponseDto;
+import com.osckorea.webadmin.starter.user.dto.UserDto;
+import com.osckorea.webadmin.starter.user.service.UserService;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

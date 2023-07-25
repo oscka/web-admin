@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.global.aop;
+package com.osckorea.webadmin.global.aop;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
@@ -7,7 +7,7 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 
-import com.osckorea.webAdmin.global.exception.Exception400;
+import com.osckorea.webadmin.global.exception.Exception400;
 
 @Aspect
 @Component

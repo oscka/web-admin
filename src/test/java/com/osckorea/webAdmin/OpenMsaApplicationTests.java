@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin;
+package com.osckorea.webadmin;
 
 import org.springframework.boot.test.context.SpringBootTest;
 

@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.starter.user.dto;
+package com.osckorea.webadmin.starter.user.dto;
 
 import java.util.UUID;
 
@@ -9,10 +9,10 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
-import com.osckorea.webAdmin.global.enums.UserRole;
-import com.osckorea.webAdmin.global.enums.UserStatus;
-import com.osckorea.webAdmin.global.util.CommonEncoder;
-import com.osckorea.webAdmin.starter.user.domain.User;
+import com.osckorea.webadmin.global.enums.UserRole;
+import com.osckorea.webadmin.global.enums.UserStatus;
+import com.osckorea.webadmin.global.util.CommonEncoder;
+import com.osckorea.webadmin.starter.user.domain.User;
 
 import java.time.Instant;
 

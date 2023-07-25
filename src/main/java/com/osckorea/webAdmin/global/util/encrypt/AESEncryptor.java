@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.global.util.encrypt;
+package com.osckorea.webadmin.global.util.encrypt;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.GCMParameterSpec;

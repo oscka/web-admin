@@ -1,10 +1,10 @@
-package com.osckorea.webAdmin.global.exception;
+package com.osckorea.webadmin.global.exception;
 
 
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
-import com.osckorea.webAdmin.global.api.ApiResponseDto;
+import com.osckorea.webadmin.global.api.ApiResponseDto;
 
 // 인증 안됨
 @Getter

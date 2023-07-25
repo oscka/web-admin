@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.global.config;
+package com.osckorea.webadmin.global.config;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import feign.Retryer;
@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.format.datetime.standard.DateTimeFormatterRegistrar;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
-@EnableFeignClients(basePackages = "com.osckorea.webAdmin")
+@EnableFeignClients(basePackages = "com.osckorea.webadmin")
 @Configuration
 public class OpenFeignConfig implements Jackson2ObjectMapperBuilderCustomizer {
 

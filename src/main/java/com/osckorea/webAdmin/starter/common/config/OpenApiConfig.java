@@ -1,4 +1,4 @@
-package com.osckorea.webAdmin.starter.common.config;
+package com.osckorea.webadmin.starter.common.config;
 
 import io.swagger.v3.oas.models.security.SecurityRequirement;
 import io.swagger.v3.oas.models.security.SecurityScheme;
