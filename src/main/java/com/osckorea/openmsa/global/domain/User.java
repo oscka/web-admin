@@ -1,9 +1,8 @@
-package com.osckorea.openmsa.starter.user.domain;
+package com.osckorea.openmsa.global.domain;
+import java.io.Serializable;
+import java.time.Instant;
+import java.util.UUID;
 
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -12,11 +11,11 @@ import org.springframework.data.relational.core.mapping.Table;
 
 import com.osckorea.openmsa.global.enums.UserRole;
 import com.osckorea.openmsa.global.enums.UserStatus;
-import com.osckorea.openmsa.starter.user.dto.UserDto;
 
-import java.io.Serializable;
-import java.time.Instant;
-import java.util.UUID;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.ToString;
 
 @EqualsAndHashCode(of = "id")
 @Builder
@@ -66,17 +65,5 @@ public class User implements Serializable {
 		this.userStatus = UserStatus.DELETED;
 	}
 
-	public UserDto.UserInfoResponse toDto(){
-		return UserDto.UserInfoResponse.builder()
-				.id(this.id)
-				.createdAt(this.createdAt)
-				.name(this.name)
-				.email(this.email)
-				.loginId(this.loginId)
-				.userStatus(this.userStatus)
-				.role(this.role)
-				.phone(this.phone)
-				.build();
-	}
 
 }

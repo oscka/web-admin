@@ -1,15 +1,16 @@
 package com.osckorea.openmsa.global.security;
 
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
-import com.osckorea.openmsa.starter.user.domain.User;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.UUID;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import com.osckorea.openmsa.global.domain.User;
+
+import lombok.Getter;
+import lombok.Setter;
 
 @Setter
 @Getter
