@@ -1,0 +1,54 @@
+#-------------------------
+# local
+# application-local.yml
+#-------------------------
+spring:
+  datasource:
+    url: jdbc:postgresql://192.168.41.50:5432/openmsadb
+    driverClassName: org.postgresql.Driver
+    username: openmsauser
+    password: open1234!!
+    # url: jdbc:h2:mem:starter;MODE=PostgreSQL;DATABASE_TO_UPPER=false;CASE_INSENSITIVE_IDENTIFIERS=true
+    #url: jdbc:h2:mem:starter;INIT=RUNSCRIPT FROM 'classpath:db/ddl.sql';MODE=PostgreSQL;DATABASE_TO_UPPER=false;CASE_INSENSITIVE_IDENTIFIERS=true
+    #url: jdbc:h2:~/starter;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH
+    # driver-class-name: org.h2.Driver
+    # username: sa
+    # password:
+  h2:
+    console:
+      enabled: true
+      #path: /h2-console  # H2 Console의 Path
+
+  #-------------------------
+  # spring.redis
+  #-------------------------
+  redis:
+    # host: host.docker.internal
+    host: 192.168.41.50 #로컬접속용 개발서버 설치 redis
+    port: 6379
+    cluster:
+      mode: false
+  #--------------------------
+  # spring.cloud.stream (kafka 설정)
+  #--------------------------
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: 192.168.41.50:9092 #로컬접속용 개발서버 설치 kafka
+          # brokers: localhost:29092
+          # zkNodes: localhost:22181
+
+logging:
+  config: classpath:log4j2-local.xml
+
+#--------------------------
+# API CONFIG
+#--------------------------
+api:
+  # connect to dev api-auth
+  auth-service:
+    url: http://k8s-fms-authserv-0bf3d872e8-842010643.ap-northeast-2.elb.amazonaws.com:8080
+  # connect to local api-auth
+  # auth-service: 
+  #   url: http://localhost:18080
