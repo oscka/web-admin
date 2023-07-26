@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.format.datetime.standard.DateTimeFormatterRegistrar;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
-@EnableFeignClients(basePackages = "com.osckorea.openmsa")
+@EnableFeignClients(basePackages ="com.osckorea.openmsa")
 @Configuration
 public class OpenFeignConfig implements Jackson2ObjectMapperBuilderCustomizer {
 
