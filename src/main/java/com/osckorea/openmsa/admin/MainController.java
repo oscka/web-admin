@@ -22,6 +22,21 @@ public class MainController {
     }
 
     //boardManage
+    @GetMapping("/boardManagement")
+    public String boardManagementPage() {
+        return "pages/boardmanagement";
+    }
+
+    // join
+    @GetMapping("/join")
+    public String joinPage() {
+        return "pages/join";
+    }
 
     //
+    @GetMapping("/viewmanagement")
+    public String viewManagementPage() {
+        return "pages/viewmanagement";
+    }
 }
+
