@@ -52,3 +52,6 @@ api:
   # connect to local api-auth
   # auth-service: 
   #   url: http://localhost:18080
+  # 접근 토큰과 갱신 토큰을 가져오기 위한 api-auth의 url입니다.
+  auth-token:
+    url: http://dev-api-auth.openmsa.io
