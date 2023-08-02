@@ -1,0 +1,57 @@
+/* Add custom styles for the navigation bar */
+body {
+    padding-top: 60px; /* Adjust the padding to make space for the navigation bar */
+    background-color: #f0f4ff; /* Set the background color */
+}
+.navbar-custom {
+    background-color: #0080ff; /* Set the background color to blue */
+    color: #ffffff; /* Set the text color to white */
+    font-size: 18px;
+    /* Add any other custom styles you want */
+}
+.sidebar {
+    background-color: #f0f4ff; /* Set the background color to a light blue */
+}
+.sidebar a {
+    color: #0080ff; /* Set the link color to blue */
+}
+.sidebar a:hover {
+    color: #0052cc; /* Set the link color to a darker blue on hover */
+}
+.active-tab {
+    background-color: #0052cc; /* Set the active tab background color to a darker blue */
+    color: #ffffff; /* Set the active tab text color to white */
+}
+
+/* Add custom styles for the login form */
+.login-form {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f4ff;
+    border: 1px solid #0080ff;
+    border-radius: 5px;
+}
+.login-form h2 {
+    text-align: center;
+    color: #0080ff;
+}
+.login-form input[type="text"], .login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #0080ff;
+    border-radius: 3px;
+}
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0080ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.login-form button:hover {
+    background-color: #0052cc;
+}

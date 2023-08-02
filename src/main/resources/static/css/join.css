@@ -1,0 +1,25 @@
+body {
+    background-color: #f0f4ff; /* 배경색을 남색으로 설정 */
+    padding: 30px; /* 전체 컨텐츠의 여백을 설정 */
+}
+
+.container {
+    max-width: 500px; /* 폼의 최대 너비를 설정 */
+    margin: 0 auto; /* 폼을 중앙에 정렬 */
+    background-color: #ffffff; /* 폼의 배경색을 흰색으로 설정 */
+    padding: 20px; /* 폼의 내부 여백을 설정 */
+    border-radius: 10px; /* 폼의 둥근 모서리를 설정 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 폼에 그림자 효과를 줌 */
+}
+
+.form-group {
+    margin-bottom: 20px; /* 각 입력 요소 사이의 여백을 설정 */
+}
+
+.form-label {
+    font-weight: bold; /* 라벨 텍스트의 글꼴 굵기를 설정 */
+}
+
+.btn-primary {
+    width: 100%; /* 제출 버튼의 너비를 100%로 설정하여 가로 폭을 채움 */
+}

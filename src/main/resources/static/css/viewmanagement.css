@@ -1,0 +1,55 @@
+/* Add custom styles for the navigation bar */
+body {
+    padding-top: 60px; /* Adjust the padding to make space for the navigation bar */
+    background-color: #f0f4ff; /* Set the background color */
+}
+.navbar-custom {
+    background-color: #0080ff; /* Set the background color to blue */
+    color: #ffffff; /* Set the text color to white */
+    font-size: 18px;
+    /* Add any other custom styles you want */
+}
+
+/* Add custom styles for the form */
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f4ff;
+    border: 1px solid #0080ff;
+    border-radius: 5px;
+}
+.form-container h2 {
+    text-align: center;
+    color: #0080ff;
+}
+.form-container label {
+    display: block;
+    margin-top: 10px;
+}
+.form-container input[type="text"], .form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #0080ff;
+    border-radius: 3px;
+}
+.form-container select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #0080ff;
+    border-radius: 3px;
+}
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0080ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.form-container button:hover {
+    background-color: #0052cc;
+}
