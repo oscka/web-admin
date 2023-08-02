@@ -1,17 +1,27 @@
 package com.osckorea.openmsa.admin;
 
-import lombok.extern.slf4j.Slf4j;
+import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import com.osckorea.openmsa.admin.auth.domain.UserSession;
 
 @Controller
 @RequestMapping("/main")
-@Slf4j
 public class MainController {
 
     @GetMapping("/")
-    public String mainPage() {
+    public String mainPage(
+        Model model,
+        HttpSession session
+    ) {
+        UserSession sessionStoreData = (UserSession) session.getAttribute("UserSession");
+
+        if(sessionStoreData != null) {
+            model.addAttribute("user", sessionStoreData.getUser());
+        }
+
         return "welcome";
     }
 
