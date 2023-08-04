@@ -1,6 +1,9 @@
 package com.osckorea.openmsa.global.config;
 
+import com.navercorp.lucy.security.xss.servletfilter.XssEscapeServletFilter;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,10 +32,11 @@ public class WebConfig implements WebMvcConfigurer {
 
     /**
      * ERROR message 설정
+     *
      * @return
      */
     @Bean
-    public MessageSource messageSource(){
+    public MessageSource messageSource() {
 
         ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
         messageSource.setBasename("classpath:i18n/error/messages");
@@ -46,6 +50,7 @@ public class WebConfig implements WebMvcConfigurer {
 
     /**
      * javax.validation message 설정
+     *
      * @return
      */
     @Bean
@@ -62,7 +67,7 @@ public class WebConfig implements WebMvcConfigurer {
 
     // error
     @Bean
-    public MessageSourceAccessor messageSourceAccessor (){
+    public MessageSourceAccessor messageSourceAccessor() {
         return new MessageSourceAccessor(messageSource());
     }
 
@@ -72,5 +77,19 @@ public class WebConfig implements WebMvcConfigurer {
         LocalValidatorFactoryBean bean = new LocalValidatorFactoryBean();
         bean.setValidationMessageSource(validationMessageSource());
         return bean;
+    }
+
+    /**
+     * XSS 필터 등록
+     *
+     */
+
+    @Bean
+    public FilterRegistrationBean<XssEscapeServletFilter> filterRegistrationBean() {
+        FilterRegistrationBean<XssEscapeServletFilter> filterRegistration = new FilterRegistrationBean<>();
+        filterRegistration.setFilter(new XssEscapeServletFilter());
+        filterRegistration.setOrder(1);
+        filterRegistration.addUrlPatterns("/*");
+        return filterRegistration;
     }
 }

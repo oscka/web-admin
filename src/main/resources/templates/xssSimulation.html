@@ -1,0 +1,16 @@
+<!-- index.html (클라이언트 사이드) -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>XSS Simulation</title>
+</head>
+<body>
+<h1>XSS Simulation</h1>
+<form action="http://localhost:8080/auth/login" method="POST">
+  <label for="message">Enter your message:</label>
+  <input type="text" id="message" name="message">
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>
+

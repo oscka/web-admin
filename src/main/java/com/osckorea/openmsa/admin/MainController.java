@@ -11,6 +11,11 @@ import com.osckorea.openmsa.admin.auth.domain.UserSession;
 @RequestMapping("/main")
 public class MainController {
 
+    @GetMapping("/xss")
+    public String xssPage() {
+        return "xssSimulation";
+    }
+
     @GetMapping("/")
     public String mainPage(
         Model model,
