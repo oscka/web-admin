@@ -81,7 +81,7 @@ public class WebConfig implements WebMvcConfigurer {
 
     /**
      * XSS 필터 등록
-     *
+     * lucy xss filter
      */
 
     @Bean
