@@ -51,4 +51,5 @@ logging:
 #--------------------------
 api:
   auth-service:
-    url: http://auth-service-svc.fms.svc:8080
+    # url: http://auth-service-svc.fms.svc:8080
+    url: http://api-auth-svc.openmsa.svc:8080
