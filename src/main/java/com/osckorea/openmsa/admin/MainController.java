@@ -28,7 +28,7 @@ public class MainController {
     //login
     @GetMapping("/login")
     public String loginPage() {
-        return "pages/login";
+        return "Pages/login";
     }
 
     //boardManage
