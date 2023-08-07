@@ -67,6 +67,8 @@ dependencies {
 
 	implementation 'org.apache.commons:commons-lang3:3.12.0'
 	implementation 'org.springdoc:springdoc-openapi-ui:1.6.14' // swagger
+
+	implementation 'org.springframework.session:spring-session-data-redis'	// Spring Session Redis Configuration
 	
 	// ---------- jwt start
 	implementation "io.jsonwebtoken:jjwt-api:0.11.2"

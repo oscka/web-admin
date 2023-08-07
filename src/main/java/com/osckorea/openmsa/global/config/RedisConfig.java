@@ -29,7 +29,9 @@ import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactor
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializationContext;
+import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
+import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.time.Duration;
@@ -45,6 +47,7 @@ import static io.lettuce.core.ReadFrom.REPLICA_PREFERRED;
  * @Profile("local") : profile 이 local 일때 사용되는 Config
  * 					   local 에선 StandAlone Type 의 Redis 를 사용하므로
  */
+@EnableRedisHttpSession
 @EnableTransactionManagement
 @Slf4j
 @RequiredArgsConstructor
@@ -141,4 +144,15 @@ public class RedisConfig {
         return redisCacheManager;
     }
 
+    /**
+     * GenericJackson2JsonRedisSerializer
+     * 해당 Bean은 Redis Session에 데이터 Serialize / Deserialize를 위한 부분입니다.
+     * 해당 Bean 제거 시, Redis에 데이터 저장 후 동일한 Class Type으로 역직렬화 시 오류가 발생할 수 있습니다.
+     * 
+     * @return RedisSerializer<Object>
+     */
+    @Bean
+    public RedisSerializer<Object> springSessionDefaultRedisSerializer() {
+        return new GenericJackson2JsonRedisSerializer();
+    }
 }

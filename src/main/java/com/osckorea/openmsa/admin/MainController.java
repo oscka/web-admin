@@ -34,19 +34,19 @@ public class MainController {
     //boardManage
     @GetMapping("/boardManagement")
     public String boardManagementPage() {
-        return "pages/boardmanagement";
+        return "Pages/boardmanagement";
     }
 
     // join
     @GetMapping("/join")
     public String joinPage() {
-        return "pages/join";
+        return "Pages/join";
     }
 
     //
     @GetMapping("/viewmanagement")
     public String viewManagementPage() {
-        return "pages/viewmanagement";
+        return "Pages/viewmanagement";
     }
 }
 

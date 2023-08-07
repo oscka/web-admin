@@ -52,4 +52,7 @@ logging:
 api:
   auth-service:
     # url: http://auth-service-svc.fms.svc:8080
+
+    # [ Project : api-auth ] url 
+    # 해당 주소를 통해 JWT Access Token & Refresh Token를 가져옵니다.
     url: http://api-auth-svc.openmsa.svc:8080
