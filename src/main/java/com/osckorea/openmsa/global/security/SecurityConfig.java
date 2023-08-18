@@ -79,7 +79,7 @@ public class SecurityConfig {
         // 1. CSRF 해제
         http.csrf().disable();
         // 2. jSessionId 사용 거부 (STATELESS 로 설정하면 쿠키에 세션키를 저장하지 않는다.)
-        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+//        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         // 3. form 로그인 해제 (UsernamePasswordAuthenticationFilter 비활성화)
         http.formLogin().disable();
         // 4. 로그인 인증창이 뜨지 않게 비활성화
@@ -92,7 +92,7 @@ public class SecurityConfig {
                 .authorizeRequests()
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                 .antMatchers("/img/**").permitAll()
-                .antMatchers("/admin/roletest").hasAuthority("ADMIN")
+                .antMatchers("/admin/roletest").hasRole("ADMIN")
                 .and()
                 .authorizeRequests().antMatchers(PERMIT_URL_ARRAY).permitAll();
 
