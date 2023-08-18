@@ -16,12 +16,8 @@ import lombok.RequiredArgsConstructor;
 public class AuthController {
     private final AuthService authService;
 
-    @PostMapping(
-        value = "/loginSubmit",
-        consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE
-    ) public String loginSubmitRequest(
-        UserSession.SignInPayload userInfo,
-        HttpSession session
+    @PostMapping(value = "/loginSubmit", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE
+    ) public String loginSubmitRequest(UserSession.SignInPayload userInfo, HttpSession session
     ) {
         UserSession userSessionData = this.authService.signIn(userInfo);
         

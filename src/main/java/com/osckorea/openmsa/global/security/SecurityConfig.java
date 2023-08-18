@@ -78,18 +78,23 @@ public class SecurityConfig {
 
         // 1. CSRF 해제
         http.csrf().disable();
-
         // 2. jSessionId 사용 거부 (STATELESS 로 설정하면 쿠키에 세션키를 저장하지 않는다.)
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-
         // 3. form 로그인 해제 (UsernamePasswordAuthenticationFilter 비활성화)
         http.formLogin().disable();
-
         // 4. 로그인 인증창이 뜨지 않게 비활성화
         http.httpBasic().disable();
-
         // 5. 커스텀 필터 등록 (security filter 교환)
         http.apply(new CustomSecurityFilterManager());
+
+        // 8. 인증, 권한 필터 설정
+        http
+                .authorizeRequests()
+                .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
+                .antMatchers("/img/**").permitAll()
+                .antMatchers("/admin/roletest").hasAuthority("ADMIN")
+                .and()
+                .authorizeRequests().antMatchers(PERMIT_URL_ARRAY).permitAll();
 
         /*
          SecurityConfig 에서 지정한 authenticationEntryPoint 와  accessDeniedHandler 는 GlobalExceptionHandler 에서 처리하지 않음
@@ -106,25 +111,6 @@ public class SecurityConfig {
             FilterResponseUtil.forbidden(response, new Exception403("권한이 없습니다"));
         });
 
-
-        // 8. 인증, 권한 필터 설정
-        http
-                // img , css 과 같은 static resources 는 허용
-                .authorizeRequests().requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-                // img 디렉토리 안에 있는 이미지 허용
-                .antMatchers("/img/**").permitAll()
-                .and()
-                .authorizeRequests().antMatchers(PERMIT_URL_ARRAY).permitAll()
-                .and()
-                .authorizeRequests(
-                        authorize -> authorize
-                                .antMatchers("/v1/order/**").authenticated()
-                                .antMatchers("/v1/admin/**").hasRole("ADMIN")
-                                .antMatchers("/v1/customer/**").hasRole("ADMIN")
-                                .antMatchers("/v1/member/**").access("hasRole('CUSTOMER') or hasRole('ADMIN')")
-                                .antMatchers("/v1/product/**").access("hasRole('CUSTOMER') or hasRole('MEMBER')")
-                                .anyRequest().permitAll()
-                );
 
         // h2-console 접속을 위해 설정
         http.headers().addHeaderWriter(new XFrameOptionsHeaderWriter(XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN));

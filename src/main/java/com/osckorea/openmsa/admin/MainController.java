@@ -21,7 +21,6 @@ public class MainController {
         if(sessionStoreData != null) {
             model.addAttribute("user", sessionStoreData.getUser());
         }
-
         return "welcome";
     }
 
