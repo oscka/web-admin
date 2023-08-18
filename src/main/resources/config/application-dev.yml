@@ -24,6 +24,13 @@ spring:
         - redis-service.redis:6379
       max-redirect: 3
   #--------------------------
+  # spring.session
+  #--------------------------
+  session:
+    store-type: redis
+    redis:
+      namespace: web-admin
+  #--------------------------
   # spring.cloud.stream (kafka 설정)
   #--------------------------
   cloud:

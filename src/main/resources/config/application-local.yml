@@ -29,6 +29,13 @@ spring:
     cluster:
       mode: false
   #--------------------------
+  # spring.session
+  #--------------------------
+  session:
+    store-type: redis
+    redis:
+      namespace: web-admin
+  #--------------------------
   # spring.cloud.stream (kafka 설정)
   #--------------------------
   cloud:
@@ -48,10 +55,11 @@ logging:
 api:
   # connect to dev api-auth
   auth-service:
-    url: http://k8s-fms-authserv-0bf3d872e8-842010643.ap-northeast-2.elb.amazonaws.com:8080
+    # url: http://k8s-fms-authserv-0bf3d872e8-842010643.ap-northeast-2.elb.amazonaws.com:8080
+    
+    # 접근 토큰과 갱신 토큰을 가져오기 위한 api-auth의 url입니다.
+    url: http://dev-api-auth.openmsa.io
+  
   # connect to local api-auth
   # auth-service: 
   #   url: http://localhost:18080
-  # 접근 토큰과 갱신 토큰을 가져오기 위한 api-auth의 url입니다.
-  auth-token:
-    url: http://dev-api-auth.openmsa.io
