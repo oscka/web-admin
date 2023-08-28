@@ -1,4 +1,4 @@
-def PROJECT_NAME = "web-admin"
+def PROJECT_NAME = "web-oss-portal"
 def gitUrl = "https://github.com/oscka/${PROJECT_NAME}"
 def imgRegistry = "https://registry.hub.docker.com"
 def gitOpsUrl = "https://github.com/oscka/gitops-openmsa"

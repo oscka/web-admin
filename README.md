@@ -1,5 +1,5 @@
-# starter
-OpenMSA inner 템플릿 프로젝트 - Starter
+# oss-portal
+OpenMSA inner 템플릿 프로젝트 - OSS_Portal
 
 ## Project 기술 스택
 - Spring Boot 2.7.12 , jdk 17, gradle 7.6.1
