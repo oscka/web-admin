@@ -29,7 +29,7 @@ spring:
   session:
     store-type: redis
     redis:
-      namespace: web-admin
+      namespace: web-oss-portal
   #--------------------------
   # spring.cloud.stream (kafka 설정)
   #--------------------------

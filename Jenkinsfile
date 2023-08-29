@@ -5,9 +5,9 @@ def gitOpsUrl = "https://github.com/oscka/gitops-openmsa"
 def opsBranch = "main"
 /////////////////////////////
 pipeline {
-     environment {
+    environment {
          PATH = "$PATH:/usr/local/bin/"  //maven, skaffold, argocd,jq path
-       }
+    }
     agent any
     stages {
         stage('Build') {
@@ -19,7 +19,7 @@ pipeline {
                         branches: [[name: "refs/tags/${TAG}"]]],
                     poll: false  
                 script{
-                    docker.withRegistry("${imgRegistry}","imageRegistry-credential"){   //credential 이름이 jenkins에 등록된 이름과 동일해야 함, jenkins에 docker deploy 권한 필요
+                    docker.withRegistry("${imgRegistry}","imageRegistry"){   //credential 이름이 jenkins에 등록된 이름과 동일해야 함, jenkins에 docker deploy 권한 필요
                         sh "pwd"
                         sh "chmod u+x ./gradlew"
                         sh "skaffold build -p dev -t ${TAG}"
