@@ -1,0 +1,14 @@
+/* 
+ * 공통으로 적용 될 CSS 디자인 파일입니다.
+ * 
+ * HTML 파일 내부에서 직접 파일을 포함시키셔도 됩니다.
+ */
+
+/* BootStrap Icon CDN 링크를 포함합니다. */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css");
+
+/* 코드조각 디자인 파일들을 포함시킵니다. */
+@import url("./fragments/navbar.css");
+@import url("./fragments/sidebar.css");
+@import url("./fragments/footer.css");
+@import url("./fragments/body.css");

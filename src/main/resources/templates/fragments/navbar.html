@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko" 
+		xmlns:th="http://www.thymeleaf.org" 
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <nav th:fragment="main-navbar" class="navbar navbar-expand-lg bg-white">
+        <div class="container-fluid">
+            <!-- 로고 이미지를 추가합니다 -->
+            <a class="navbar-brand" href="#">
+                <img th:src="@{/img/osclogo.png/}" alt="osc Logo" height="30">
+            </a>
+    
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{/main}">
+                            <i class="bi bi-house-door"></i> 메인화면
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:if="${user}" th:href="@{/auth/logout}">
+                            <i class="bi bi-door-closed"></i> 로그아웃
+                        </a>
+                        <a class="nav-link" th:unless="${user}" th:href="@{/main/login}">
+                            <i class="bi bi-door-open"></i> 로그인
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/main/boardManagement}">
+                            <i class="bi bi-signpost-split"></i> 게시판 관리
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/main/viewmanagement}">
+                            <i class="bi bi-signpost-split"></i> 화면 관리
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:if="!${user}" th:href="@{/main/join}">
+                            <i class="bi bi-box-arrow-in-right"></i> 회원 가입
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+</html>

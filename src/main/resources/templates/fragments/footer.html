@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko" 
+		xmlns:th="http://www.thymeleaf.org" 
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <div th:fragment="main-footer" id="main-footer" class="mb-5 container-fluid">
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <img th:src="@{/img/osclogo.png}" alt="Your Logo" height="30">
+                <p>
+                    OSC Korea Co.,ltd<br>
+                    Address: 서울 서초구 신반포로 339 바바논현빌딩 1층 <br>
+                    Phone: (02) 539-3690<br>
+                    Email: info@osckorea.com
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h5>Useful Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Follow Us</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a th:href="@{https://www.facebook.com/oscasia.korea/}">
+                            <i class="bi bi-facebook"></i> Facebook
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@{https://twitter.com/i/flow/login?redirect_after_login=%2Fosc_korea}">
+                            <i class="bi bi-twitter"></i> Twitter
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="bi bi-instagram"></i> Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@{https://kr.linkedin.com/company/oscasia-korea}">
+                            <i class="bi bi-linkedin"></i> LinkedIn
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</html>

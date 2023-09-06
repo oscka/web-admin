@@ -57,6 +57,7 @@ dependencies {
 
 	implementation 'com.navercorp.lucy:lucy-xss-servlet:2.0.1' // 네이버 루시 XssFilter
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf' // Thymeleaf
+	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect' // Thymeleaf Dialect
 	implementation 'org.springframework.boot:spring-boot-starter-aop' // aop
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc' // spring data jdbc
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis' // redis
@@ -69,7 +70,7 @@ dependencies {
 	implementation 'org.springdoc:springdoc-openapi-ui:1.6.14' // swagger
 
 	implementation 'org.springframework.session:spring-session-data-redis'	// Spring Session Redis Configuration
-	
+
 	// ---------- jwt start
 	implementation "io.jsonwebtoken:jjwt-api:0.11.2"
 	implementation 'io.jsonwebtoken:jjwt-impl:0.11.2'

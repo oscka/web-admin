@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko" 
+		xmlns:th="http://www.thymeleaf.org" 
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <nav th:fragment="main-sidebar" id="main-sidebar" class="h-100 flex-column align-items-stretch pe-4 border-end sidebar col-md-3">
+        <nav class="nav nav-pills flex-column">
+            <a class="nav-link" th:href="@{/main/login}">
+                <i class="bi bi-door-open"></i> 로그인
+            </a>
+            <a class="nav-link" th:href="@{/main/join}">
+                <i class="bi bi-box-arrow-in-right"></i> 회원가입
+            </a>
+            <a class="nav-link" th:href="@{/main/boardManagement}">
+                <i class="bi bi-signpost-split"></i> 게시판 관리
+            </a>
+            <a class="nav-link" th:href="@{/main/viewmanagement}">
+                <i class="bi bi-signpost-split"></i> 화면 관리
+            </a>
+            <a class="nav-link" th:href="@{/admin/roletest}">
+                <i class="bi bi-signpost-split"></i> 권한 관리 동작 테스트
+            </a>
+            <a class="nav-link" th:href="@{/browse/repositories}">
+                <i class="bi bi-list-columns-reverse"></i> Browse
+            </a>
+        </nav>
+    </nav>
+</html>

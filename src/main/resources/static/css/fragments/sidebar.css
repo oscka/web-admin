@@ -1,0 +1,13 @@
+#main-sidebar > nav > a {
+    color: black;
+}
+
+#main-sidebar > nav > a:hover {
+    color: lightgray;
+}
+
+@media (max-width: 800px) {
+    #main-sidebar > nav {
+        display: none;
+    }
+}

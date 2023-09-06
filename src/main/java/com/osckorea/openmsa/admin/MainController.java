@@ -11,7 +11,7 @@ import com.osckorea.openmsa.admin.auth.domain.UserSession;
 @RequestMapping("/main")
 public class MainController {
 
-    @GetMapping("/")
+    @GetMapping
     public String mainPage(
         Model model,
         HttpSession session
@@ -27,25 +27,25 @@ public class MainController {
     //login
     @GetMapping("/login")
     public String loginPage() {
-        return "Pages/login";
+        return "pages/login";
     }
 
     //boardManage
     @GetMapping("/boardManagement")
     public String boardManagementPage() {
-        return "Pages/boardmanagement";
+        return "pages/boardmanagement";
     }
 
     // join
     @GetMapping("/join")
     public String joinPage() {
-        return "Pages/join";
+        return "pages/join";
     }
 
     //
     @GetMapping("/viewmanagement")
     public String viewManagementPage() {
-        return "Pages/viewmanagement";
+        return "pages/viewmanagement";
     }
 }
 

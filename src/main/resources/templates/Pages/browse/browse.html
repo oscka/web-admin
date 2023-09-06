@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko"
+		xmlns:th="http://www.thymeleaf.org"
+        layout:decorate="~{layout/main}">
+    <th:block layout:fragment="stylesheet">
+        <link th:href="@{/css/browse/browse.css}" rel="stylesheet">
+    </th:block>
+
+    <div layout:fragment="content-with-sidebar">
+        <nav th:replace="~{pages/browse/browse-breadcrumb}"></nav>
+
+        <div th:replace="~{pages/browse/browse-repositories}"></div>
+
+        <div th:replace="~{pages/browse/browse-modal}"></div>
+
+        <div th:replace="~{fragments/toast :: main-toast}"></div>
+    </div>
+
+    <th:block layout:fragment="script">
+        <!-- 저장소 링크 복사 버튼용 Script -->
+        <script type="text/javascript" th:inline="javascript">
+            // 저장소 URL 복사버튼 동작 Script
+            function copy_to_clipboard(event) {
+                const targetElement = event.target.parentNode.querySelector(".url");
+
+                window.navigator.clipboard.writeText(targetElement.value);
+
+                const toastTrigger = event.target;
+                const toastPanel = document.getElementById('browseToast')
+
+                if (toastTrigger) {
+                    bootstrap.Toast.getOrCreateInstance(toastPanel).show()
+                }
+            }
+        </script>
+
+        <!-- 저장소 Modal Form용 Script -->
+        <script type="text/javascript" th:inline="javascript">
+            // 저장소 목록 데이터
+            const repositorySettingListData = /*[[${repositorySettingList}]]*/ "";
+
+            function toggle_modal(event, object) {
+                const modalTitle = document.getElementsByClassName("modal-title")[0];
+
+                const mainModalRepoName = document.getElementById("repo-name");
+                const mainModalRepoFormat = document.getElementById("repo-format");
+                const mainModalRepoType = document.getElementById("repo-type");
+                const mainModalRepoURL = document.getElementById("repo-url");
+                const mainModalRepoOnlineStatus = document.getElementById("repo-online");
+                
+                modalTitle.innerHTML = `<i class="bi bi-boxes"></i> ${object.name}`;
+
+                mainModalRepoName.value = object.name;
+                mainModalRepoFormat.value = object.format;
+                mainModalRepoType.value = object.type;
+                mainModalRepoURL.value = object.url;
+                mainModalRepoOnlineStatus.checked = object.status.online;
+
+                let mainModalRepoRemoteStorage = document.getElementById("repo-remote-storage");
+                let mainModalRepoBlocked = document.getElementById("repo-blocked");
+                let mainModalRepoAutoBlockingEnabled = document.getElementById("repo-auto-blocking-enabled");
+
+                let mainModalRepoMaximumComponentAge = document.getElementById("repo-maximum-component-age");
+                let mainModalRepoMaximumMetadataAge = document.getElementById("repo-maximum-metadata-age");
+
+                let mainModalRepoBlobStore = document.getElementById("repo-blobstore");
+                let mainModalRepoStrictContentTypeValidation = document.getElementById("repo-strict-content-type-validation");
+
+                let mainModalRepoNotFoundCacheEnabled = document.getElementById("repo-not-found-cache-enabled");
+                let mainModalRepoNotFoundCacheTTL = document.getElementById("repo-not-found-cache-ttl");
+
+                repositorySettingListData.map((setting) => {
+                    if(object.name === setting.name) {
+                        mainModalRepoRemoteStorage.value = setting.proxy.remoteUrl;
+                        mainModalRepoBlocked.checked = setting.httpClient.blocked;
+                        mainModalRepoAutoBlockingEnabled.checked = setting.httpClient.autoBlock;
+
+                        mainModalRepoMaximumComponentAge.value = setting.proxy.contentMaxAge;
+                        mainModalRepoMaximumMetadataAge.value = setting.proxy.metadataMaxAge;
+
+                        mainModalRepoBlobStore.value = setting.storage.blobStoreName;
+                        mainModalRepoStrictContentTypeValidation.checked = setting.storage.strictContentTypeValidation;
+
+                        mainModalRepoNotFoundCacheEnabled.checked = setting.negativeCache.enabled;
+                        mainModalRepoNotFoundCacheTTL.value = setting.negativeCache.timeToLive;
+                    }
+                })
+            }
+        </script>
+    </th:block>
+</html>

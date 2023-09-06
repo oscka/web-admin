@@ -37,7 +37,7 @@ public class UserRoleController {
 
     @GetMapping("/roletest")
     public String roleTestPage() {
-        return "Pages/roletest";
+        return "pages/roletest";
     }
 
     // 권한 관리 페이지로 이동
@@ -71,11 +71,11 @@ public class UserRoleController {
             // UserDetails 정보 출력
             log.info("UserDetails 정보: " + userinfo.toString());
 
-                return "redirect:/main/"; // 인가 실패 시 다른 페이지로 이동
+            return "redirect:/main"; // 인가 실패 시 다른 페이지로 이동
         } else {
             // 비밀번호 불일치 시 로그인 실패
             log.info("로그인 실패");
-            return "redirect:/main/"; // 로그인 실패 시 다른 페이지로 이동
+            return "redirect:/main"; // 로그인 실패 시 다른 페이지로 이동
         }
     }
 
