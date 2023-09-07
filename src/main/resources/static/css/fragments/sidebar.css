@@ -10,7 +10,7 @@
     background-color: white !important;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
     #main-sidebar > nav {
         display: none;
     }

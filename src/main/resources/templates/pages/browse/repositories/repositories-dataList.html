@@ -17,26 +17,26 @@
     <tbody class="table-group-divider">
         <tr th:if="${not #lists.isEmpty(repositoryList)}" 
             th:each="repository : ${repositoryList}" >
-            <!-- 저장소 이름 -->
+            <!-- /*저장소 이름*/ -->
             <td scope="row" 
                 class="repo-name w-20" 
                 th:text="${repository.name}"
                 data-bs-toggle="modal" 
                 data-bs-target="#staticBackdrop"
                 th:onclick="toggle_modal(event, [[${repository}]])">Name</td>
-            <!-- 저장소 Type -->
+            <!-- /*저장소 Type*/ -->
             <td class="repo-type w-10" 
                 th:text="${repository.type}"
                 data-bs-toggle="modal" 
                 data-bs-target="#staticBackdrop"
                 th:onclick="toggle_modal(event, [[${repository}]])">Type</td>
-            <!-- 저장소 Format -->
+            <!-- /*저장소 Format*/ -->
             <td class="repo-format w-10" 
                 th:text="${repository.format}"
                 data-bs-toggle="modal" 
                 data-bs-target="#staticBackdrop"
                 th:onclick="toggle_modal(event, [[${repository}]])">Format</td>
-            <!-- 저장소 상태 -->
+            <!-- /*저장소 상태*/ -->
             <td class="w-20" 
                 th:if="${repository.status.description != null}" 
                 th:text="${repository.status.online} ? |Online - ${repository.status.description}| : 'Not Ready Yet ...'"
@@ -48,7 +48,7 @@
                 data-bs-toggle="modal" 
                 data-bs-target="#staticBackdrop"
                 th:onclick="toggle_modal(event, [[${repository}]])">Status</td>
-            <!-- 저장소 링크 복사 버튼 -->
+            <!-- /*저장소 링크 복사 버튼*/ -->
             <td class="w-10">
                 <input class="url" th:value="${repository.url}" hidden readonly>
                 <button type="button" class="btn btn-outline-secondary btn-sm copy-btn" onclick="copy_to_clipboard(event)">

@@ -7,7 +7,7 @@
     </th:block>
 
     <div layout:fragment="content-with-sidebar">
-        <nav th:replace="~{pages/browse/repositories/repositories-breadcrumb}"></nav>
+        <nav th:replace="~{fragments/breadcrumb :: main-breadcrumb('Browse','Repositories') }"></nav>
 
         <div th:replace="~{pages/browse/repositories/repositories-dataList}"></div>
 
@@ -17,7 +17,7 @@
     </div>
 
     <th:block layout:fragment="script">
-        <!-- 저장소 링크 복사 버튼용 Script -->
+        <!-- /*저장소 링크 복사 버튼용 Script*/ -->
         <script type="text/javascript" th:inline="javascript">
             // 저장소 URL 복사버튼 동작 Script
             function copy_to_clipboard(event) {
@@ -34,7 +34,7 @@
             }
         </script>
 
-        <!-- 저장소 Modal Form용 Script -->
+        <!-- /*저장소 Modal Form용 Script*/ -->
         <script type="text/javascript" th:inline="javascript">
             // 저장소 목록 데이터
             const repositorySettingListData = /*[[${repositorySettingList}]]*/ "";

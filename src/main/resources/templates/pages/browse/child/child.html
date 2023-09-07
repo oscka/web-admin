@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko"
+		xmlns:th="http://www.thymeleaf.org"
+        layout:decorate="~{layout/main}">
+    <th:block layout:fragment="stylesheet">
+        <link th:href="@{/css/browse/browse.css}" rel="stylesheet">
+    </th:block>
+
+    <div layout:fragment="content-with-sidebar">
+            <div th:if="${browse}" th:with="treeChildList=${browse.result.data}">
+                <ul class="list-group" th:each="data : ${treeChildList}">
+                    <li class="list-group-item" th:name="${repository}" th:id="${data.id}" th:text="${data.text}" th:onclick="location_tab_move(this.getAttribute('name'), this.getAttribute('id'))"></li>
+                </ul>
+            </div>
+            <div th:unless="${browse}">
+                <ul class="list-group" th:each="data : ${repositories}">
+                    <li class="list-group-item" th:name="${data.name}" th:text="${data.name}" th:onclick="location_tab_move(this.getAttribute('name'),'/')"></li>
+                </ul>
+            </div>
+    </div>
+
+    <th:block layout:fragment="script">
+        <script type="text/javascript" th:inline="javascript">
+            function location_tab_move(name, id) {
+                location.href=`tree?repositoryName=${name}&nodeId=${id}`;
+            }
+        </script>
+    </th:block>
+</html>
