@@ -2,7 +2,7 @@
 <html lang="ko" 
 		xmlns:th="http://www.thymeleaf.org" 
 		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-    <nav th:fragment="main-navbar" class="navbar navbar-expand-lg bg-white">
+    <nav th:fragment="main-navbar" id="main-navbar" class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <!-- 로고 이미지를 추가합니다 -->
             <a class="navbar-brand" href="#">
@@ -14,32 +14,46 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav nav-underline me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" th:href="@{/main}">
+                        <a class="nav-link" 
+                            th:href="@{/main}" 
+                            th:classappend="${#httpServletRequest.requestURI == '/main' or #httpServletRequest.requestURI == '/main/'} ? 'active' : ''">
                             <i class="bi bi-house-door"></i> 메인화면
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" th:if="${user}" th:href="@{/auth/logout}">
+                        <a class="nav-link" 
+                            th:if="${user}" 
+                            th:href="@{/auth/logout}">
                             <i class="bi bi-door-closed"></i> 로그아웃
                         </a>
-                        <a class="nav-link" th:unless="${user}" th:href="@{/main/login}">
+                        <a class="nav-link" 
+                            th:unless="${user}" 
+                            th:href="@{/main/login}"
+                            th:classappend="${#httpServletRequest.requestURI == '/main/login' or #httpServletRequest.requestURI == '/main/login/'} ? 'active' : ''">
                             <i class="bi bi-door-open"></i> 로그인
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/main/boardManagement}">
+                        <a class="nav-link" 
+                            th:href="@{/main/boardManagement}"
+                            th:classappend="${#httpServletRequest.requestURI == '/main/boardManagement' or #httpServletRequest.requestURI == '/main/boardManagement/'} ? 'active' : ''">
                             <i class="bi bi-signpost-split"></i> 게시판 관리
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/main/viewmanagement}">
+                        <a class="nav-link" 
+                            th:href="@{/main/viewmanagement}"
+                            th:classappend="${#httpServletRequest.requestURI == '/main/viewmanagement' or #httpServletRequest.requestURI == '/main/viewmanagement/'} ? 'active' : ''">
                             <i class="bi bi-signpost-split"></i> 화면 관리
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" th:if="!${user}" th:href="@{/main/join}">
+                        <a class="nav-link" 
+                            th:if="!${user}" 
+                            th:href="@{/main/join}"
+                            th:classappend="${#httpServletRequest.requestURI == '/main/join' or #httpServletRequest.requestURI == '/main/join/'} ? 'active' : ''">
                             <i class="bi bi-box-arrow-in-right"></i> 회원 가입
                         </a>
                     </li>

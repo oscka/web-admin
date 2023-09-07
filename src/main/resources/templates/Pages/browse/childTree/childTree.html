@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko"
+		xmlns:th="http://www.thymeleaf.org"
+        layout:decorate="~{layout/main}">
+    <th:block layout:fragment="stylesheet">
+        <link th:href="@{/css/browse/browse.css}" rel="stylesheet">
+    </th:block>
+
+    <div layout:fragment="content-with-sidebar">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">A fourth item</li>
+            <li class="list-group-item">And a fifth one</li>
+        </ul>
+    </div>
+
+    <th:block layout:fragment="script"></th:block>
+</html>

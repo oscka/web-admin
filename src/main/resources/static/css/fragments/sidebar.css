@@ -1,9 +1,13 @@
-#main-sidebar > nav > a {
+#main-sidebar a {
     color: black;
 }
 
-#main-sidebar > nav > a:hover {
+#main-sidebar a:hover {
     color: lightgray;
+}
+
+#browseCollapseItems > .nav-link {
+    background-color: white !important;
 }
 
 @media (max-width: 800px) {

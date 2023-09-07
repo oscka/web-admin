@@ -1,0 +1,15 @@
+<!-- BreadCrumb -->
+<nav th:fragment="main-breadcrumb(root, child)" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a th:href="@{/browse/repositories}">
+                <i class="bi bi-caret-right-fill"></i> Browse
+            </a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+            <a th:href="@{/browse/repositories}">
+                Repositories
+            </a>
+        </li>
+    </ol>
+</nav>

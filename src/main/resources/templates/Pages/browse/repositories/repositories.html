@@ -7,11 +7,11 @@
     </th:block>
 
     <div layout:fragment="content-with-sidebar">
-        <nav th:replace="~{pages/browse/browse-breadcrumb}"></nav>
+        <nav th:replace="~{pages/browse/repositories/repositories-breadcrumb}"></nav>
 
-        <div th:replace="~{pages/browse/browse-repositories}"></div>
+        <div th:replace="~{pages/browse/repositories/repositories-dataList}"></div>
 
-        <div th:replace="~{pages/browse/browse-modal}"></div>
+        <div th:replace="~{pages/browse/repositories/repositories-modal}"></div>
 
         <div th:replace="~{fragments/toast :: main-toast}"></div>
     </div>
