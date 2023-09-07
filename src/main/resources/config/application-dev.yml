@@ -63,3 +63,10 @@ api:
     # [ Project : api-auth ] url 
     # 해당 주소를 통해 JWT Access Token & Refresh Token를 가져옵니다.
     url: http://api-auth-svc.openmsa.svc:8080
+  nexus:
+    base-url: http://192.168.41.50:8081
+    username: admin
+    password: osckorea!
+    external: ${api.nexus.base-url}/service/extdirect
+    internal: ${api.nexus.base-url}/service/rest/internal
+    public: ${api.nexus.base-url}/service/rest/v1

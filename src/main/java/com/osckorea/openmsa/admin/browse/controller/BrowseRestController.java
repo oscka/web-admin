@@ -14,14 +14,10 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("browse")
 @RequiredArgsConstructor
 public class BrowseRestController {
-    private final BrowseService browseService;
+    // private final BrowseService browseService;
 
-    @GetMapping()
-    public Object[] getRepositorySettings() {
-        return this.browseService.getRepositorySettings();
-    }
-
-    @PostMapping("test")
-    public void get(@RequestBody ExternalApiRequestDto<Request> data) {
-    }
+    // @GetMapping()
+    // public Object[] getRepositorySettings() {
+    //     return this.browseService.getRepositorySettings();
+    // }
 }

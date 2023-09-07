@@ -15,16 +15,16 @@ import lombok.RequiredArgsConstructor;
 public class BrowseController {
     private final BrowseService browseService;
     
-    @GetMapping("repositories")
-    public String browseRepositories(Model model) {
-        RepositoryDto.ResponseDetail[] data1 = this.browseService.getResponseDetails();
-        Object[] data = this.browseService.getRepositorySettings();
+    // @GetMapping("repositories")
+    // public String browseRepositories(Model model) {
+    //     RepositoryDto.ResponseDetail[] data1 = this.browseService.getResponseDetails();
+    //     Object[] data = this.browseService.getRepositorySettings();
 
-        model.addAttribute("repositoryList", data1);
-        model.addAttribute("repositorySettingList", data);
+    //     model.addAttribute("repositoryList", data1);
+    //     model.addAttribute("repositorySettingList", data);
 
-        return "pages/browse/browse";
-    }
+    //     return "pages/browse/browse";
+    // }
 
     // @GetMapping("")
     // public String browseRepository(Model model) {
