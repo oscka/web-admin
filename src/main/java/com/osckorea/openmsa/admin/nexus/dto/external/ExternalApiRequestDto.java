@@ -12,7 +12,9 @@ public class ExternalApiRequestDto<T> {
 
     private T[] data;
 
-    private String type;
+    @Builder.Default
+    private String type = "rpc";
 
-    private Integer tid;
+    @Builder.Default
+    private Integer tid = 1;
 }

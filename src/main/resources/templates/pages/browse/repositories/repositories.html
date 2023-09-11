@@ -3,7 +3,7 @@
 		xmlns:th="http://www.thymeleaf.org"
         layout:decorate="~{layout/main}">
     <th:block layout:fragment="stylesheet">
-        <link th:href="@{/css/browse/browse.css}" rel="stylesheet">
+        <link th:href="@{/css/browse/repositories.css}" rel="stylesheet">
     </th:block>
 
     <div layout:fragment="content-with-sidebar">
@@ -37,54 +37,58 @@
         <!-- 저장소 Modal Form용 Script -->
         <script type="text/javascript" th:inline="javascript">
             // 저장소 목록 데이터
-            const repositorySettingListData = /*[[${repositorySettingList}]]*/ "";
+            //const repositorySettingListData = /*[[${repositorySettingList}]]*/ "";
+
+            const protocol = window.location.protocol;
+            const hostname = window.location.hostname;
+            const port = window.location.port;
 
             function toggle_modal(event, object) {
                 const modalTitle = document.getElementsByClassName("modal-title")[0];
 
-                const mainModalRepoName = document.getElementById("repo-name");
-                const mainModalRepoFormat = document.getElementById("repo-format");
-                const mainModalRepoType = document.getElementById("repo-type");
-                const mainModalRepoURL = document.getElementById("repo-url");
-                const mainModalRepoOnlineStatus = document.getElementById("repo-online");
-                
                 modalTitle.innerHTML = `<i class="bi bi-boxes"></i> ${object.name}`;
 
-                mainModalRepoName.value = object.name;
-                mainModalRepoFormat.value = object.format;
-                mainModalRepoType.value = object.type;
-                mainModalRepoURL.value = object.url;
-                mainModalRepoOnlineStatus.checked = object.status.online;
+                document.getElementById("repo-name").value = object.name;
+                document.getElementById("repo-format").value = object.format;
+                document.getElementById("repo-type").value = object.type;
+                document.getElementById("repo-url").value = object.url;
+                document.getElementById("repo-online").checked = object.status.online;
 
-                let mainModalRepoRemoteStorage = document.getElementById("repo-remote-storage");
-                let mainModalRepoBlocked = document.getElementById("repo-blocked");
-                let mainModalRepoAutoBlockingEnabled = document.getElementById("repo-auto-blocking-enabled");
+                axios.get(`${protocol}//${hostname}:${port}/browse/repository/${object.format}/${object.type}/${object.name}`)
+                        .then(res => {
+                            // document.getElementById("http-feild").innerText = res.data;
+                            console.log(res.data)
+                        });
 
-                let mainModalRepoMaximumComponentAge = document.getElementById("repo-maximum-component-age");
-                let mainModalRepoMaximumMetadataAge = document.getElementById("repo-maximum-metadata-age");
+                // let mainModalRepoRemoteStorage = document.getElementById("repo-remote-storage");
+                // let mainModalRepoBlocked = document.getElementById("repo-blocked");
+                // let mainModalRepoAutoBlockingEnabled = document.getElementById("repo-auto-blocking-enabled");
 
-                let mainModalRepoBlobStore = document.getElementById("repo-blobstore");
-                let mainModalRepoStrictContentTypeValidation = document.getElementById("repo-strict-content-type-validation");
+                // let mainModalRepoMaximumComponentAge = document.getElementById("repo-maximum-component-age");
+                // let mainModalRepoMaximumMetadataAge = document.getElementById("repo-maximum-metadata-age");
 
-                let mainModalRepoNotFoundCacheEnabled = document.getElementById("repo-not-found-cache-enabled");
-                let mainModalRepoNotFoundCacheTTL = document.getElementById("repo-not-found-cache-ttl");
+                // let mainModalRepoBlobStore = document.getElementById("repo-blobstore");
+                // let mainModalRepoStrictContentTypeValidation = document.getElementById("repo-strict-content-type-validation");
 
-                repositorySettingListData.map((setting) => {
-                    if(object.name === setting.name) {
-                        mainModalRepoRemoteStorage.value = setting.proxy.remoteUrl;
-                        mainModalRepoBlocked.checked = setting.httpClient.blocked;
-                        mainModalRepoAutoBlockingEnabled.checked = setting.httpClient.autoBlock;
+                // let mainModalRepoNotFoundCacheEnabled = document.getElementById("repo-not-found-cache-enabled");
+                // let mainModalRepoNotFoundCacheTTL = document.getElementById("repo-not-found-cache-ttl");
 
-                        mainModalRepoMaximumComponentAge.value = setting.proxy.contentMaxAge;
-                        mainModalRepoMaximumMetadataAge.value = setting.proxy.metadataMaxAge;
+                // repositorySettingListData.map((setting) => {
+                //     if(object.name === setting.name) {
+                //         mainModalRepoRemoteStorage.value = setting.proxy.remoteUrl;
+                //         mainModalRepoBlocked.checked = setting.httpClient.blocked;
+                //         mainModalRepoAutoBlockingEnabled.checked = setting.httpClient.autoBlock;
 
-                        mainModalRepoBlobStore.value = setting.storage.blobStoreName;
-                        mainModalRepoStrictContentTypeValidation.checked = setting.storage.strictContentTypeValidation;
+                //         mainModalRepoMaximumComponentAge.value = setting.proxy.contentMaxAge;
+                //         mainModalRepoMaximumMetadataAge.value = setting.proxy.metadataMaxAge;
 
-                        mainModalRepoNotFoundCacheEnabled.checked = setting.negativeCache.enabled;
-                        mainModalRepoNotFoundCacheTTL.value = setting.negativeCache.timeToLive;
-                    }
-                })
+                //         mainModalRepoBlobStore.value = setting.storage.blobStoreName;
+                //         mainModalRepoStrictContentTypeValidation.checked = setting.storage.strictContentTypeValidation;
+
+                //         mainModalRepoNotFoundCacheEnabled.checked = setting.negativeCache.enabled;
+                //         mainModalRepoNotFoundCacheTTL.value = setting.negativeCache.timeToLive;
+                //     }
+                // })
             }
         </script>
     </th:block>

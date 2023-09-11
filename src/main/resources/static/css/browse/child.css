@@ -1,0 +1,8 @@
+ol.breadcrumb > li.breadcrumb-item > a {
+    color: black;
+    text-decoration: none;
+}
+
+li:hover {
+    color: lightgray;
+}

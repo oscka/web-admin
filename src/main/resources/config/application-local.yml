@@ -65,9 +65,11 @@ api:
 
   # Nexus Repository Manager 3 연결관련 설정
   nexus:
+    # base-url: http://192.168.41.50:8081
     base-url: http://127.0.0.1:8081
     username: admin
     password: password1201
+    # password: osckorea!
     external: ${api.nexus.base-url}/service/extdirect
     internal: ${api.nexus.base-url}/service/rest/internal
     public: ${api.nexus.base-url}/service/rest/v1

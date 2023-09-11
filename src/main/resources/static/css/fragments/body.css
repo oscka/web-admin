@@ -2,4 +2,5 @@
     height: 100% + 100px;
     margin-top: 90px;
     padding-top: 10px;
+    min-height: 600px;
 }
