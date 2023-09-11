@@ -20,10 +20,30 @@
         <!-- 저장소 링크 복사 버튼용 Script -->
         <script type="text/javascript" th:inline="javascript">
             // 저장소 URL 복사버튼 동작 Script
-            function copy_to_clipboard(event) {
+            async function copy_to_clipboard(event) {
                 const targetElement = event.target.parentNode.querySelector(".url");
 
-                navigator.clipboard.writeText(targetElement.value);
+                if(navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(targetElement.value);
+                } else {
+                    const textArea = document.createElement("textarea");
+
+                    textArea.value = targetElement.value;
+
+                    textArea.style.position = "absolute";
+                    textArea.style.left = "-999999px";
+
+                    document.body.prepend(textArea);
+                    textArea.select();
+
+                    try {
+                        document.execCommand('copy');
+                    } catch (err) {
+                        console.error(err);
+                    } finally {
+                        textArea.remove();
+                    }
+                }
 
                 const toastTrigger = event.target;
                 const toastPanel = document.getElementById('browseToast')
