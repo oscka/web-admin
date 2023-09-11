@@ -23,7 +23,7 @@
             function copy_to_clipboard(event) {
                 const targetElement = event.target.parentNode.querySelector(".url");
 
-                window.navigator.clipboard.writeText(targetElement.value);
+                navigator.clipboard.writeText(targetElement.value);
 
                 const toastTrigger = event.target;
                 const toastPanel = document.getElementById('browseToast')
@@ -37,8 +37,6 @@
         <!-- 저장소 Modal Form용 Script -->
         <script type="text/javascript" th:inline="javascript">
             // 저장소 목록 데이터
-            //const repositorySettingListData = /*[[${repositorySettingList}]]*/ "";
-
             const protocol = window.location.protocol;
             const hostname = window.location.hostname;
             const port = window.location.port;
@@ -54,41 +52,34 @@
                 document.getElementById("repo-url").value = object.url;
                 document.getElementById("repo-online").checked = object.status.online;
 
+                let mainModalRepoRemoteStorage = document.getElementById("repo-remote-storage");
+                let mainModalRepoBlocked = document.getElementById("repo-blocked");
+                let mainModalRepoAutoBlockingEnabled = document.getElementById("repo-auto-blocking-enabled");
+
+                let mainModalRepoMaximumComponentAge = document.getElementById("repo-maximum-component-age");
+                let mainModalRepoMaximumMetadataAge = document.getElementById("repo-maximum-metadata-age");
+
+                let mainModalRepoBlobStore = document.getElementById("repo-blobstore");
+                let mainModalRepoStrictContentTypeValidation = document.getElementById("repo-strict-content-type-validation");
+
+                let mainModalRepoNotFoundCacheEnabled = document.getElementById("repo-not-found-cache-enabled");
+                let mainModalRepoNotFoundCacheTTL = document.getElementById("repo-not-found-cache-ttl");
+
                 axios.get(`${protocol}//${hostname}:${port}/browse/repository/${object.format}/${object.type}/${object.name}`)
                         .then(res => {
-                            // document.getElementById("http-feild").innerText = res.data;
-                            console.log(res.data)
+                            mainModalRepoRemoteStorage.value = res.data.proxy.remoteUrl;
+                            mainModalRepoBlocked.checked = res.data.httpClient.blocked;
+                            mainModalRepoAutoBlockingEnabled.checked = res.data.httpClient.autoBlock;
+
+                            mainModalRepoMaximumComponentAge.value = res.data.proxy.contentMaxAge;
+                            mainModalRepoMaximumMetadataAge.value = res.data.proxy.metadataMaxAge;
+
+                            mainModalRepoBlobStore.value = res.data.storage.blobStoreName;
+                            mainModalRepoStrictContentTypeValidation.checked = res.data.storage.strictContentTypeValidation;
+
+                            mainModalRepoNotFoundCacheEnabled.checked = res.data.negativeCache.enabled;
+                            mainModalRepoNotFoundCacheTTL.value = res.data.negativeCache.timeToLive;
                         });
-
-                // let mainModalRepoRemoteStorage = document.getElementById("repo-remote-storage");
-                // let mainModalRepoBlocked = document.getElementById("repo-blocked");
-                // let mainModalRepoAutoBlockingEnabled = document.getElementById("repo-auto-blocking-enabled");
-
-                // let mainModalRepoMaximumComponentAge = document.getElementById("repo-maximum-component-age");
-                // let mainModalRepoMaximumMetadataAge = document.getElementById("repo-maximum-metadata-age");
-
-                // let mainModalRepoBlobStore = document.getElementById("repo-blobstore");
-                // let mainModalRepoStrictContentTypeValidation = document.getElementById("repo-strict-content-type-validation");
-
-                // let mainModalRepoNotFoundCacheEnabled = document.getElementById("repo-not-found-cache-enabled");
-                // let mainModalRepoNotFoundCacheTTL = document.getElementById("repo-not-found-cache-ttl");
-
-                // repositorySettingListData.map((setting) => {
-                //     if(object.name === setting.name) {
-                //         mainModalRepoRemoteStorage.value = setting.proxy.remoteUrl;
-                //         mainModalRepoBlocked.checked = setting.httpClient.blocked;
-                //         mainModalRepoAutoBlockingEnabled.checked = setting.httpClient.autoBlock;
-
-                //         mainModalRepoMaximumComponentAge.value = setting.proxy.contentMaxAge;
-                //         mainModalRepoMaximumMetadataAge.value = setting.proxy.metadataMaxAge;
-
-                //         mainModalRepoBlobStore.value = setting.storage.blobStoreName;
-                //         mainModalRepoStrictContentTypeValidation.checked = setting.storage.strictContentTypeValidation;
-
-                //         mainModalRepoNotFoundCacheEnabled.checked = setting.negativeCache.enabled;
-                //         mainModalRepoNotFoundCacheTTL.value = setting.negativeCache.timeToLive;
-                //     }
-                // })
             }
         </script>
     </th:block>
