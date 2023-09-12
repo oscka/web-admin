@@ -4,7 +4,7 @@ ol.breadcrumb > li.breadcrumb-item > a {
 }
 
 fieldset {
-    border: 1px solid lightgray;
+    /* border: 1px solid lightgray; */
     border-radius: 20px;
     padding: 15px;
 }
@@ -33,4 +33,8 @@ table .w-20 {
 
 table .w-30 {
     width: 30%;
+}
+
+.modal-dialog {
+    max-width: 95%;
 }

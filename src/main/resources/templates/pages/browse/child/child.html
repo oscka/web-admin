@@ -7,16 +7,16 @@
     </th:block>
 
     <div layout:fragment="content-with-sidebar">
-            <div th:if="${browseNode}">
-                <ul class="list-group" th:each="node : ${browseNode}">
-                    <li class="list-group-item" th:name="${repositoryName}" th:id="${node.id}" th:text="${node.text}" th:onclick="location_tab_move(this.getAttribute('name'), this.getAttribute('id'))">data</li>
-                </ul>
-            </div>
-            <div th:unless="${browseNode}">
-                <ul class="list-group" th:each="repository : ${repositoryList}">
-                    <li class="list-group-item" th:name="${repository.name}" th:text="${repository.name}" th:onclick="location_tab_move(this.getAttribute('name'),'/')"></li>
-                </ul>
-            </div>
+        <div th:if="${browseNode}">
+            <ul class="list-group" th:each="node : ${browseNode}">
+                <li class="list-group-item" th:name="${repositoryName}" th:id="${node.id}" th:text="${node.text}" th:onclick="location_tab_move(this.getAttribute('name'), this.getAttribute('id'))">data</li>
+            </ul>
+        </div>
+        <div th:unless="${browseNode}">
+            <ul class="list-group" th:each="repository : ${repositoryList}">
+                <li class="list-group-item" th:name="${repository.name}" th:text="${repository.name}" th:onclick="location_tab_move(this.getAttribute('name'),'/')"></li>
+            </ul>
+        </div>
     </div>
 
     <th:block layout:fragment="script">

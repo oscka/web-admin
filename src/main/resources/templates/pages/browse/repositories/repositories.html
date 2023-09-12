@@ -11,51 +11,24 @@
 
         <div th:replace="~{pages/browse/repositories/repositories-dataList}"></div>
 
-        <div th:replace="~{pages/browse/repositories/repositories-modal}"></div>
+        <th:block th:replace="~{pages/browse/repositories/repositories-modal :: default-repository-modal}"></th:block>
+        
+        <!-- <th:block th:if="${repository.type} == 'group'" th:replace="~{pages/browse/repositories/repositories-modal :: group-repository-modal}"></th:block>
+        <th:block th:if="${repository.type} == 'hosted" th:replace="~{pages/browse/repositories/repositories-modal :: hosted-repository-modal}"></th:block>
+        <th:block th:if="${repository.type} == 'proxy'" th:replace="~{pages/browse/repositories/repositories-modal :: proxy-repository-modal}"></th:block> -->
 
         <div th:replace="~{fragments/toast :: main-toast}"></div>
     </div>
 
     <th:block layout:fragment="script">
-        <!-- 저장소 링크 복사 버튼용 Script -->
-        <script type="text/javascript" th:inline="javascript">
-            // 저장소 URL 복사버튼 동작 Script
-            async function copy_to_clipboard(event) {
-                const targetElement = event.target.parentNode.querySelector(".url");
-
-                if(navigator.clipboard && window.isSecureContext) {
-                    await navigator.clipboard.writeText(targetElement.value);
-                } else {
-                    const textArea = document.createElement("textarea");
-
-                    textArea.value = targetElement.value;
-
-                    textArea.style.position = "absolute";
-                    textArea.style.left = "-999999px";
-
-                    document.body.prepend(textArea);
-                    textArea.select();
-
-                    try {
-                        document.execCommand('copy');
-                    } catch (err) {
-                        console.error(err);
-                    } finally {
-                        textArea.remove();
-                    }
-                }
-
-                const toastTrigger = event.target;
-                const toastPanel = document.getElementById('browseToast')
-
-                if (toastTrigger) {
-                    bootstrap.Toast.getOrCreateInstance(toastPanel).show()
-                }
-            }
-        </script>
+        <script type="text/javascript" th:src="@{/script/browse/browse.js}"></script>
+        <script type="module" th:src="@{/script/browse/constants/fieldset.js}"></script>
+        <script type="module" th:src="@{/script/browse/utils/toggle_modal.js}"></script>
+        <script type="text/javascript" th:src="@{/script/browse/utils/copy_to_clipboard.js}"></script>
+        <script type="text/javascript" th:src="@{/script/browse/utils/search_component.js}"></script>
 
         <!-- 저장소 Modal Form용 Script -->
-        <script type="text/javascript" th:inline="javascript">
+        <!-- <script type="text/javascript" th:inline="javascript">
             // 저장소 목록 데이터
             const protocol = window.location.protocol;
             const hostname = window.location.hostname;
@@ -87,6 +60,13 @@
 
                 axios.get(`${protocol}//${hostname}:${port}/browse/repository/${object.format}/${object.type}/${object.name}`)
                         .then(res => {
+                            if (object.type === "proxy") {
+                            
+                            } else if (object.type === "hosted") {
+
+                            } else if (object.type === group) {
+
+                            }
                             mainModalRepoRemoteStorage.value = res.data.proxy.remoteUrl;
                             mainModalRepoBlocked.checked = res.data.httpClient.blocked;
                             mainModalRepoAutoBlockingEnabled.checked = res.data.httpClient.autoBlock;
@@ -101,6 +81,6 @@
                             mainModalRepoNotFoundCacheTTL.value = res.data.negativeCache.timeToLive;
                         });
             }
-        </script>
+        </script> -->
     </th:block>
 </html>

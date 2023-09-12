@@ -7,11 +7,12 @@
     </caption>
     <thead>
         <tr class="table-light">
-            <th scope="col-2">Name</th>
-            <th scope="col">Type</th>
-            <th scope="col">Format</th>
-            <th scope="col">Status</th>
-            <th scope="col">URL</th>
+            <th scope="col">저장소 이름</th>
+            <th scope="col">저장소 형태</th>
+            <th scope="col">저장소 언어 형태</th>
+            <th scope="col">상태</th>
+            <th scope="col">링크</th>
+            <th scope="col">정보</th>
         </tr>
     </thead>
     <tbody class="table-group-divider">
@@ -20,44 +21,41 @@
             <!-- 저장소 이름 -->
             <td scope="row" 
                 class="repo-name w-20" 
-                th:text="${repository.name}"
-                data-bs-toggle="modal" 
-                data-bs-target="#staticBackdrop"
-                th:onclick="toggle_modal(event, [[${repository}]])">Name</td>
+                th:text="${repository.name}">Name</td>
             <!-- 저장소 Type -->
             <td class="repo-type w-10" 
-                th:text="${repository.type}"
-                data-bs-toggle="modal" 
-                data-bs-target="#staticBackdrop"
-                th:onclick="toggle_modal(event, [[${repository}]])">Type</td>
+                th:text="${repository.type}">Type</td>
             <!-- 저장소 Format -->
             <td class="repo-format w-10" 
-                th:text="${repository.format}"
-                data-bs-toggle="modal" 
-                data-bs-target="#staticBackdrop"
-                th:onclick="toggle_modal(event, [[${repository}]])">Format</td>
+                th:text="${repository.format}">Format</td>
             <!-- 저장소 상태 -->
             <td class="w-20" 
                 th:if="${repository.status.description != null}" 
-                th:text="${repository.status.online} ? |Online - ${repository.status.description}| : 'Not Ready Yet ...'"
-                data-bs-toggle="modal" 
-                data-bs-target="#staticBackdrop"
-                th:onclick="toggle_modal(event, [[${repository}]])">Status</td>
+                th:text="${repository.status.online} ? |Online - ${repository.status.description}| : 'Not Ready Yet ...'">Status</td>
             <td class="w-20" th:unless="${repository.status.description != null}" 
-                th:text="${repository.status.online} ? 'Online' : 'Not Ready Yet ...'"
-                data-bs-toggle="modal" 
-                data-bs-target="#staticBackdrop"
-                th:onclick="toggle_modal(event, [[${repository}]])">Status</td>
+                th:text="${repository.status.online} ? 'Online' : 'Not Ready Yet ...'">Status</td>
             <!-- 저장소 링크 복사 버튼 -->
             <td class="w-10">
                 <input class="url" th:value="${repository.url}" hidden readonly>
-                <button type="button" class="btn btn-outline-secondary btn-sm copy-btn" onclick="copy_to_clipboard(event)">
+                <button type="button" 
+                        class="btn btn-outline-secondary btn-sm copy-btn" 
+                        onclick="copy_to_clipboard(event)">
                     <i class="bi bi-clipboard-plus"></i> 복사
+                </button>
+            </td>
+            <td class="w-10">
+                <button type="button" 
+                        class="btn btn-outline-secondary btn-sm"
+                        data-bs-toggle="modal" 
+                        data-bs-target="#staticBackdrop"
+                        data-bs-whatever="${repository}"
+                        th:onclick="toggle_modal([[${repository}]])">
+                        <i class="bi bi-info-lg"></i> 정보
                 </button>
             </td>
         </tr>
         <tr th:unless="${not #lists.isEmpty(repositoryList)}">
-            <th scope="row" colspan="5">저장소 목록 데이터가 존재하지 않습니다.</th>
+            <th scope="row" colspan="6">저장소 목록 데이터가 존재하지 않습니다.</th>
         </tr>
     </tbody>
 </table>

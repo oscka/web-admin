@@ -12,8 +12,7 @@
         <div id="content-section" layout:fragment="content">
             <div class="row">
                 <!-- Side Bar -->
-                <!-- <nav id="sidebar-section" th:replace="~{fragments/sidebar :: main-sidebar}" class="col-md-3"></nav> -->
-                <nav id="sidebar-section" th:replace="~{fragments/sidebar :: sub-sidebar}" class="col-md-3"></nav>
+                <nav id="sidebar-section" th:replace="~{fragments/sidebar :: main-sidebar}" class="col-md-3"></nav>
 
                 <!-- Side Bar를 적용하는 파일의 경우, 아래의 content-with-sidebar Fragment Layout Section를 사용합니다. -->
                 <div id="content-with-sidebar-section" layout:fragment="content-with-sidebar" class="col-md-9"></div>

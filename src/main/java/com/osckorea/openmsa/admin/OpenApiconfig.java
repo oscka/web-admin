@@ -2,11 +2,44 @@ package com.osckorea.openmsa.admin;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
+import org.springdoc.core.GroupedOpenApi;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class OpenApiconfig {
+
+    @Bean
+    public GroupedOpenApi allApi() {
+        return GroupedOpenApi.builder()
+                                .group("All API")
+                                .pathsToMatch("/**")
+                                .build();
+    }
+
+    @Bean
+    public GroupedOpenApi assetApi() {
+        return GroupedOpenApi.builder()
+                                .group("Nexus Asset API")
+                                .pathsToMatch("/v1/assets/**")
+                                .build();
+    }
+
+    @Bean
+    public GroupedOpenApi componentApi() {
+        return GroupedOpenApi.builder()
+                                .group("Nexus Component API")
+                                .pathsToMatch("/v1/components/**")
+                                .build();
+    }
+
+    @Bean
+    public GroupedOpenApi repositoryApi() {
+        return GroupedOpenApi.builder()
+                                .group("Nexus Repository API")
+                                .pathsToMatch("/v1/repository/**")
+                                .build();
+    }
 
     @Bean
     public OpenAPI openAPI() {
