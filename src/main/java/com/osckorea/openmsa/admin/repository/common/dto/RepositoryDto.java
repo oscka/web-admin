@@ -31,9 +31,7 @@ public class RepositoryDto {
     }
     
     @Getter
-    // @NoArgsConstructor(access = AccessLevel.PROTECTED)
-    // @AllArgsConstructor
-    @NoArgsConstructor
+    @NoArgsConstructor(access = AccessLevel.PROTECTED)
     @AllArgsConstructor
     public static class Response {
         private String id;

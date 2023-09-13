@@ -6,7 +6,9 @@ import org.springframework.stereotype.Service;
 import com.osckorea.openmsa.admin.component.dto.ComponentDto;
 import com.osckorea.openmsa.admin.component.feign.ComponentFeignClient;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class ComponentService {
@@ -41,6 +43,8 @@ public class ComponentService {
             if(response.getContinuationToken() == null) {
                 break;
             }
+
+            log.info(String.valueOf(count));
 
             response = this.componentFeignClient.getComponentList(response.getContinuationToken(), name);
         }

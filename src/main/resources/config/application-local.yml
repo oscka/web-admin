@@ -54,6 +54,19 @@ spring:
 logging:
   config: classpath:log4j2-local.xml
 
+# Vulnerability Fegin Client Logging
+  # level:
+  #   com.osckorea.openmsa.admin.vulnerability.common.feign: DEBUG
+
+#--------------------------
+# spring.cloud.openfeign
+#--------------------------
+# feign:
+#   client:
+#     config:
+#       default:
+#         connectTimeout: 5000
+
 #--------------------------
 # API CONFIG
 #--------------------------
@@ -73,3 +86,4 @@ api:
     external: ${api.nexus.base-url}/service/extdirect
     internal: ${api.nexus.base-url}/service/rest/internal
     public: ${api.nexus.base-url}/service/rest/v1
+    oss-index: "https://ossindex.sonatype.org"
