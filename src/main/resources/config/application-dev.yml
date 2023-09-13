@@ -70,3 +70,4 @@ api:
     external: ${api.nexus.base-url}/service/extdirect
     internal: ${api.nexus.base-url}/service/rest/internal
     public: ${api.nexus.base-url}/service/rest/v1
+    oss-index: "https://ossindex.sonatype.org"
