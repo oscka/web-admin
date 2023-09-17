@@ -18,19 +18,14 @@ public class AssetService {
         // Initial Response
         AssetDto response = this.assetFeignClient.getAssetList(name);
 
-        String token = response.getContinuationToken();
-
-        Stream.of(response.getItems()).forEach(item -> assetItems.add(item));
-
         while(true) {
-            response = this.assetFeignClient.getAssetList(token, name);
-            token = response.getContinuationToken();
-
             Stream.of(response.getItems()).forEach(item -> assetItems.add(item));
 
-            if(token == null) {
+            if(response.getContinuationToken() == null) {
                 break;
             }
+
+            response = this.assetFeignClient.getAssetList(response.getContinuationToken(), name);
         }
 
         return assetItems;
@@ -41,18 +36,14 @@ public class AssetService {
 
         AssetDto response = this.assetFeignClient.getAssetList(name);
 
-        String token = response.getContinuationToken();
-        count += response.getItems().length;
-
         while(true) {
-            response = this.assetFeignClient.getAssetList(token, name);
-            
-            token = response.getContinuationToken();
             count += response.getItems().length;
 
-            if(token == null) {
+            if(response.getContinuationToken() == null) {
                 break;
             }
+
+            response = this.assetFeignClient.getAssetList(response.getContinuationToken(), name);
         }
 
         return count;

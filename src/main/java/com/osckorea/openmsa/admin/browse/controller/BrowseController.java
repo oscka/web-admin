@@ -9,10 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.osckorea.openmsa.admin.browse.dto.BrowseTreeNodeDto;
 import com.osckorea.openmsa.admin.browse.service.BrowseExternalService;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 
@@ -24,9 +20,6 @@ public class BrowseController {
     private final BrowseExternalService browseExternalService;
     
     @Operation(summary = "하위 Node 조회 API 입니다.")
-    @ApiResponses(value = {
-        @ApiResponse(content = @Content())
-    })
     @GetMapping("browse/{repositoryName}/nodes")
     public BrowseTreeNodeDto.Response[] getBrowseTreeNodes(@PathVariable("repositoryName") String name, @RequestParam(value = "nodeId", required = false) String nodeId) {
         if(nodeId == null) {

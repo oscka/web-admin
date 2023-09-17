@@ -55,21 +55,23 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 
-	implementation 'com.navercorp.lucy:lucy-xss-servlet:2.0.1' // 네이버 루시 XssFilter
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf' // Thymeleaf
-	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect' // Thymeleaf Dialect
-	implementation 'org.springframework.boot:spring-boot-starter-aop' // aop
-	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc' // spring data jdbc
-	implementation 'org.springframework.boot:spring-boot-starter-data-redis' // redis
+	implementation 'com.navercorp.lucy:lucy-xss-servlet:2.0.1' 						// 네이버 루시 XssFilter
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf' 		// Thymeleaf
+	implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect' 				// Thymeleaf Dialect
+	implementation 'org.springframework.boot:spring-boot-starter-aop' 				// AOP
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc' 		// Spring data jdbc
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis' 		// Redis
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-	implementation "org.springframework.cloud:spring-cloud-starter-openfeign"  // OpenFeign
-	implementation 'org.springframework.cloud:spring-cloud-starter-stream-kafka' // Kafka
-	implementation 'org.springframework.boot:spring-boot-starter-log4j2' // log4j2
+	implementation "org.springframework.cloud:spring-cloud-starter-openfeign"  		// OpenFeign
+	implementation 'org.springframework.cloud:spring-cloud-starter-stream-kafka' 	// Kafka
+	implementation 'org.springframework.boot:spring-boot-starter-log4j2' 			// log4j2
+	
+	// implementation 'org.springframework.boot:spring-boot-starter-quartz'			// Spring Quartz
 
 	implementation 'org.apache.commons:commons-lang3:3.12.0'
-	implementation 'org.springdoc:springdoc-openapi-ui:1.6.14' // swagger
+	implementation 'org.springdoc:springdoc-openapi-ui:1.6.14' 						// Swagger
 
-	implementation 'org.springframework.session:spring-session-data-redis'	// Spring Session Redis Configuration
+	implementation 'org.springframework.session:spring-session-data-redis'			// Spring session redis
 
 	// ---------- jwt start
 	implementation "io.jsonwebtoken:jjwt-api:0.11.2"

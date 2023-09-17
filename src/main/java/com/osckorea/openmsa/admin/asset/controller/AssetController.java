@@ -17,13 +17,13 @@ import lombok.RequiredArgsConstructor;
 public class AssetController {
     private final AssetService assetService;
 
-    @GetMapping("assets/list/{repositoryName}")
+    @GetMapping("asset/list/{repositoryName}")
     public Object getAssetList(@PathVariable("repositoryName") String name) {
         return this.assetService.getAssetList(name);
     }
 
 
-    @GetMapping("assets/count/{repositoryName}")
+    @GetMapping("asset/count/{repositoryName}")
     public Integer getAmountOfAsset(@PathVariable("repositoryName") String name) {
         return this.assetService.countAmountOfAsset(name);
     }

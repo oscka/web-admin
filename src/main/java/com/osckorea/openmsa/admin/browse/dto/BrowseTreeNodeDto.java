@@ -1,5 +1,6 @@
 package com.osckorea.openmsa.admin.browse.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,6 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 public class BrowseTreeNodeDto {
+    @Schema(name = "BrowseTreeNodeRequestDto")
     @Getter
     @Builder
     public static class Request {
@@ -14,6 +16,7 @@ public class BrowseTreeNodeDto {
         private String node;
     }
 
+    @Schema(name = "BrowseTreeNodeResponseDto")
     @Getter
     @NoArgsConstructor(access = AccessLevel.PROTECTED)
     @AllArgsConstructor

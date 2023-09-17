@@ -26,14 +26,14 @@ public class MavenSearchController {
     @Operation(summary = "Maven 저장소 Component 목록 조회")
     @ApiResponses(value = @ApiResponse(responseCode = "200", content = @Content(schema = @Schema(implementation = SearchMavenComponentDto.class))))
     @GetMapping("search/maven2/{repositoryName}/components")
-    public SearchMavenComponentDto searchMavenComponents(@PathVariable("repositoryName") String name, @RequestParam("keyword") String keyword) {
+    public SearchMavenComponentDto searchMavenComponents(@PathVariable("repositoryName") String name, @RequestParam(value = "keyword", required = false) String keyword) {
         return this.mavenSearchService.searchMavenComponents(name, keyword);
     }
 
     @Operation(summary = "Maven 저장소 Asset 목록 조회")
     @ApiResponses(value = @ApiResponse(responseCode = "200", content = @Content(schema = @Schema(implementation = SearchMavenAssetDto.class))))
     @GetMapping("search/maven2/{repositoryName}/assets")
-    public SearchMavenAssetDto searchMavenAssets(@PathVariable("repositoryName") String name, @RequestParam("keyword") String keyword) {
+    public SearchMavenAssetDto searchMavenAssets(@PathVariable("repositoryName") String name, @RequestParam(value = "keyword", required = false) String keyword) {
         return this.mavenSearchService.searchMavenAssets(name, keyword);
     }
 }
