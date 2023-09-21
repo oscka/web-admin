@@ -1,0 +1,18 @@
+#-----------------------
+# asset.http
+# Asset 검색 관련 API
+#-----------------------
+
+### 변수 값
+// 저장소 이름
+@repository = maven-central
+
+#-----------------------
+
+### 1. 특정 저장소의 모든 Asset 목록 조회
+GET /v1/assets/{{repository}}
+Host: localhost:8080
+
+### 2. 특정 저장소의 모드 Asset 목록 수 조회
+GET /v1/assets/count/{{repository}}
+Host: localhost:8080

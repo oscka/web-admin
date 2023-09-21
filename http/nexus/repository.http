@@ -1,0 +1,232 @@
+#-----------------------
+# repository.http
+# 저장소 CRUD API
+#-----------------------
+
+### 1. Maven Group 저장소 조회
+GET /v1/repository/maven2/group/maven-public
+Host: localhost:8080
+
+### 2. Maven Hosted 저장소 조회
+GET /v1/repository/maven2/hosted/maven-snapshots
+Host: localhost:8080
+
+### 3. Maven Proxy 저장소 조회
+GET /v1/repository/maven2/proxy/maven-central
+
+Host: localhost:8080
+### 4. Maven Group 저장소 갱신
+PUT /v1/repository/maven2/group/maven-public
+Host: localhost:8080
+Content-Type: application/json
+
+{
+    "name": "maven-public",
+    "online": "string",
+    "storage": {
+        "blobStoreName": "string",
+        "strictContentTypeValidation": true,
+        "writePolicy": "string"
+    },
+    "group": {
+        "memberNames": [
+        "string"
+        ]
+    }
+}
+
+### 5. Maven Hosted 저장소 갱신
+PUT /v1/repository/maven2/hosted/maven-snapshots
+Host: localhost:8080
+Content-Type: application/json
+
+{
+    "name": "maven-snapshots",
+    "online": true,
+    "storage": {
+        "blobStoreName": "string",
+        "strictContentTypeValidation": true,
+        "writePolicy": "string"
+    },
+    "cleanup": {
+        "policyNames": [
+        "string"
+        ]
+    },
+    "component": {
+        "proprietaryComponents": true
+    },
+    "maven": {
+        "versionPolicy": "string",
+        "layoutPolicy": "string",
+        "contentDisposition": "string"
+    }
+}
+
+### 6. Maven Proxy 저장소 갱신
+PUT /v1/repository/maven2/proxy/maven-central
+Host: localhost:8080
+Content-Type: application/json
+
+{
+    "name": "maven-central",
+    "online": true,
+    "storage": {
+        "blobStoreName": "string",
+        "strictContentTypeValidation": true,
+        "writePolicy": "string"
+    },
+    "cleanup": {
+        "policyNames": [
+        "string"
+        ]
+    },
+    "proxy": {
+        "remoteUrl": "string"
+    },
+    "negativeCache": {
+        "enabled": true,
+        "timeToLive": 0
+    },
+    "httpClient": {
+        "blocked": true,
+        "autoBlock": true,
+        "connection": {
+        "retries": 0,
+        "userAgentSuffix": "string",
+        "timeout": 0,
+        "enableCircularRedirects": true,
+        "enableCookies": true,
+        "useTrustStore": true
+        },
+        "authentication": {
+        "type": "string",
+        "username": "string",
+        "password": "string",
+        "ntlmHost": "string",
+        "ntlmDomain": "string",
+        "preemptive": true
+        }
+    },
+    "routingRule": "string",
+    "replication": {
+        "preemptivePullEnabled": true,
+        "assetPathRegex": "string"
+    },
+    "maven": {
+        "versionPolicy": "string",
+        "layoutPolicy": "string",
+        "contentDisposition": "string"
+    }
+}
+
+
+### 7. Maven Group 저장소 생성
+POST /v1/repository/maven2/group
+Host: localhost:8080
+Content-Type: application/json
+
+{
+    "name": "maven-group-test",
+    "online": "string",
+    "storage": {
+        "blobStoreName": "string",
+        "strictContentTypeValidation": true,
+        "writePolicy": "string"
+    },
+    "group": {
+        "memberNames": [
+        "string"
+        ]
+    }
+}
+
+### 8. Maven Hosted 저장소 생성
+POST /v1/repository/maven2/hosted
+Host: localhost:8080
+Content-Type: application/json
+
+{
+    "name": "maven-hosted-test",
+    "online": true,
+    "storage": {
+        "blobStoreName": "string",
+        "strictContentTypeValidation": true,
+        "writePolicy": "string"
+    },
+    "cleanup": {
+        "policyNames": [
+        "string"
+        ]
+    },
+    "component": {
+        "proprietaryComponents": true
+    },
+    "maven": {
+        "versionPolicy": "string",
+        "layoutPolicy": "string",
+        "contentDisposition": "string"
+    }
+}
+
+### 9. Maven Proxy 저장소 생성
+POST /v1/repository/maven2/proxy
+Host: localhost:8080
+Content-Type: application/json
+
+{
+    "name": "maven-proxy-test",
+    "online": true,
+    "storage": {
+        "blobStoreName": "string",
+        "strictContentTypeValidation": true,
+        "writePolicy": "string"
+    },
+    "cleanup": {
+        "policyNames": [
+        "string"
+        ]
+    },
+    "proxy": {
+        "remoteUrl": "string"
+    },
+    "negativeCache": {
+        "enabled": true,
+        "timeToLive": 0
+    },
+    "httpClient": {
+        "blocked": true,
+        "autoBlock": true,
+        "connection": {
+        "retries": 0,
+        "userAgentSuffix": "string",
+        "timeout": 0,
+        "enableCircularRedirects": true,
+        "enableCookies": true,
+        "useTrustStore": true
+        },
+        "authentication": {
+        "type": "string",
+        "username": "string",
+        "password": "string",
+        "ntlmHost": "string",
+        "ntlmDomain": "string",
+        "preemptive": true
+        }
+    },
+    "routingRule": "string",
+    "replication": {
+        "preemptivePullEnabled": true,
+        "assetPathRegex": "string"
+    },
+    "maven": {
+        "versionPolicy": "string",
+        "layoutPolicy": "string",
+        "contentDisposition": "string"
+    }
+}
+
+
+### 10. 저장소 삭제
+DELETE /v1/repository/maven-central
+Host: localhost:8080

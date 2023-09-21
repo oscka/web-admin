@@ -1,0 +1,15 @@
+#-----------------------
+# browse.http
+# TreeNode 탐색 API
+#-----------------------
+
+### 변수 값
+// 저장소 이름
+@repository=maven-central
+
+#-----------------------
+
+### 1. 하위 Tree Node를 조회합니다.
+GET /v1/browse/{{repository}}/nodes
+    ?nodeId=org/apache/apache
+Host: localhost:8080

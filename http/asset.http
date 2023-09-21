@@ -1,7 +1,0 @@
-# 특정 저장소의 모든 Asset 목록 조회
-GET /v1/asset/list/maven-central
-Host: localhost:8080
-
-# 특정 저장소의 모드 Asset 목록 수 조회
-GET /v1/asset/count/maven-central
-Host: localhost:8080

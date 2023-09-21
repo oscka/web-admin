@@ -1,7 +1,0 @@
-# 특정 저장소의 Component 목록 조회
-GET /v1/component/list/maven-central
-Host: localhost:8080
-
-# 특정 저장소의 Component 목록 수 조회
-GET /v1/component/count/maven-central
-Host: localhost:8080

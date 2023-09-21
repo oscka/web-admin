@@ -1,0 +1,22 @@
+#-----------------------
+# search.http
+# 검색 관련 API
+#-----------------------
+
+### 변수 값
+// 저장소 이름
+@repository=maven-central
+// 검색 키워드
+@keyword=log4j
+
+#-----------------------
+
+### 1. 특정 저장소의 Keyword단위 Component 검색
+GET /v1/search/maven2/{{repository}}/components
+    ?keyword={{keyword}}
+Host: localhost:8080
+
+### 2. 특정 저장소의 Keyword단위 Asset 검색
+GET /v1/search/maven2/{{repository}}/assets
+    ?keyword={{keyword}}
+Host: localhost:8080
