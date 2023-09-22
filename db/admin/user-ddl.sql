@@ -1,0 +1,22 @@
+-- DROP USER TABLE & TYPES
+DROP TABLE IF EXISTS "user";
+DROP TYPE IF EXISTS USER_STATUS;
+DROP TYPE IF EXISTS USER_ROLE;
+
+-- CREATE ENUM TYPES FOR USER TABLE
+CREATE TYPE USER_STATUS AS ENUM ('ACTIVE', 'BAN', 'LOCKED', 'DELETED');
+CREATE TYPE USER_ROLE AS ENUM ('ROLE_ADMIN', 'ROLE_CUSTOMER', 'ROLE_MEMBER');
+
+-- CREATE USER TABLE
+CREATE TABLE IF NOT EXISTS "user"(
+    user_id             VARCHAR     NOT NULL,
+    user_password       VARCHAR     NOT NULL,
+    user_name           VARCHAR     NOT NULL,
+    user_status         USER_STATUS NOT NULL    DEFAULT 'ACTIVE',
+    user_role           USER_ROLE   NOT NULL    DEFAULT 'ROLE_MEMBER',
+    user_email          VARCHAR     NOT NULL,
+    user_phone_number   VARCHAR     NOT NULL,
+    created_date        TIMESTAMP   NOT NULL    DEFAULT CURRENT_TIMESTAMP,
+    modified_date       TIMESTAMP   NULL,
+    CONSTRAINT PK_USER  PRIMARY KEY(user_id)
+);
