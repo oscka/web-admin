@@ -1,8 +1,8 @@
 package com.osckorea.openmsa.nexus.webhook.repository.dto;
 
 import java.sql.Timestamp;
-import com.osckorea.openmsa.nexus.repository.common.dto.types.Component;
 import com.osckorea.openmsa.nexus.webhook.common.dto.AbstractWebhookDto;
+import com.osckorea.openmsa.nexus.webhook.repository.dto.types.Component;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -23,6 +23,6 @@ public class WebhookRepositoryComponentDto extends AbstractWebhookDto{
 
     @Schema(example = "CREATED")
     private String action;
-    
+
     private Component component;
 }

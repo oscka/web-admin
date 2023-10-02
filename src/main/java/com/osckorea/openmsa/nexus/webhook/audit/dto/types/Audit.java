@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+@Schema(name = "WebhookAuditType")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
@@ -18,6 +19,6 @@ public class Audit {
 
     @Schema(example = "TestUser")
     private String context;
-    
+
     private AuditAttributes attributes;
 }
