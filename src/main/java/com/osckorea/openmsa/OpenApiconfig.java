@@ -69,6 +69,15 @@ public class OpenApiconfig {
     }
 
     @Bean
+    public GroupedOpenApi webhookCallBackApi() {
+        return GroupedOpenApi.builder()
+                                .group("Nexus Webhook API")
+                                .pathsToMatch("/v1/webhook/**")
+                                // .pathsToExclude("/v1/webhook")
+                                .build();
+    }
+
+    @Bean
     public OpenAPI openAPI() {
         SecurityScheme basicAuth = new SecurityScheme().type(SecurityScheme.Type.HTTP).scheme("basic");
 
