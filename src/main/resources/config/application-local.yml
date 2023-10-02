@@ -4,14 +4,14 @@
 #-------------------------
 spring:
   datasource:
-    # url: jdbc:postgresql://192.168.41.50:5432/openmsadb
-    # driverClassName: org.postgresql.Driver
-    # username: openmsauser
-    # password: open1234!!
-    url: jdbc:postgresql://localhost:5432/test
+    url: jdbc:postgresql://192.168.41.50:5432/openmsadb
     driverClassName: org.postgresql.Driver
-    username: ray
-    password: 123456
+    username: openmsauser
+    password: open1234!!
+    # url: jdbc:postgresql://localhost:5432/test
+    # driverClassName: org.postgresql.Driver
+    # username: ray
+    # password: 123456
     # url: jdbc:h2:mem:starter;MODE=PostgreSQL;DATABASE_TO_UPPER=false;CASE_INSENSITIVE_IDENTIFIERS=true
     #url: jdbc:h2:mem:starter;INIT=RUNSCRIPT FROM 'classpath:db/ddl.sql';MODE=PostgreSQL;DATABASE_TO_UPPER=false;CASE_INSENSITIVE_IDENTIFIERS=true
     #url: jdbc:h2:~/starter;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH
@@ -28,8 +28,8 @@ spring:
   #-------------------------
   redis:
     # host: host.docker.internal
-    # host: 192.168.41.50 #로컬접속용 개발서버 설치 redis
-    host: localhost
+    host: 192.168.41.50 #로컬접속용 개발서버 설치 redis
+    # host: localhost
     port: 6379
     cluster:
       mode: false
@@ -69,11 +69,11 @@ api:
 
   # Nexus Repository Manager 3 연결관련 설정
   nexus:
-    # base-url: http://192.168.41.50:8081
-    base-url: http://127.0.0.1:8081
+    base-url: http://192.168.41.50:8081
+    # base-url: http://127.0.0.1:8081
     username: admin
-    password: password1201
-    # password: osckorea!
+    # password: password1201
+    password: osckorea!
     external: ${api.nexus.base-url}/service/extdirect
     internal: ${api.nexus.base-url}/service/rest/internal
     public: ${api.nexus.base-url}/service/rest/v1
