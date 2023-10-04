@@ -18,7 +18,7 @@ public class AuditAttributes {
     private String name;
 
     @Schema(example = "example@example.com")
-    private String enmai;
+    private String email;
 
     @Schema(example = "default")
     private String source;
