@@ -20,13 +20,13 @@ public class MavenAssetService {
 
         MavenAssetPagingDto response = this.mavenAssetFeignClient.getAssetList(name);
 
-        while (response.getContinuationToken() != null) {
+        do {
             for(MavenAssetDto item : response.getItems()) {
                 assetList.add(item);
             }
 
             response = this.mavenAssetFeignClient.getAssetList(response.getContinuationToken(), name);
-        }
+        } while (response.getContinuationToken() != null);
 
         return assetList;
     }
@@ -36,11 +36,11 @@ public class MavenAssetService {
 
         MavenAssetPagingDto response = this.mavenAssetFeignClient.getAssetList(name);
 
-        while(response.getContinuationToken() != null) {
+        do {
             count += response.getItems().length;
-
+    
             response = this.mavenAssetFeignClient.getAssetList(response.getContinuationToken(), name);
-        }
+        } while(response.getContinuationToken() != null);
 
         return count;
     }

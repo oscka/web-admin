@@ -24,7 +24,7 @@ public class MavenComponentService {
 
         MavenComponentPagingDto response = this.mavenComponentFeignClient.getComponentList(name);
 
-        while (response.getContinuationToken() != null) {
+        do {
             for(MavenComponentDto item : response.getItems()) {
                 componentList.add(item);
 
@@ -36,7 +36,7 @@ public class MavenComponentService {
             }
 
             response = this.mavenComponentFeignClient.getComponentList(response.getContinuationToken(), name);
-        }
+        } while (response.getContinuationToken() != null);
 
         return componentList;
     }
@@ -46,11 +46,11 @@ public class MavenComponentService {
 
         MavenComponentPagingDto response = this.mavenComponentFeignClient.getComponentList(name);
 
-        while (response.getContinuationToken() != null) {
+        do {
             count += response.getItems().length;
 
             response = this.mavenComponentFeignClient.getComponentList(response.getContinuationToken(), name);
-        }
+        } while (response.getContinuationToken() != null);
 
         return count;
     }
