@@ -21,7 +21,9 @@ public class NexusUserService {
         NexusUser user = userFeignClient.getUserInfo();
 
         log.warn(user.getUserId());
+        log.warn(user.getFirstName());
+        log.warn(user.getLastName());
         log.warn(user.getEmail());
-
+        log.warn(user.getExternal());
     }
 }

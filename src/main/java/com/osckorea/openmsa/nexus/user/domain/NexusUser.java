@@ -13,5 +13,5 @@ public class NexusUser {
     private String firstName;
     private String lastName;
     private String email;
-    private boolean external;
+    private String external;
 }
