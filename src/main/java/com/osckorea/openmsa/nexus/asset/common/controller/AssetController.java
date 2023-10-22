@@ -17,7 +17,7 @@ public class AssetController {
     private final AssetDownloadService assetDownloadService;
 
     @GetMapping(value = "assets/download", params = {"url"}, produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
-    public ResponseEntity<Resource> assetDownload(@RequestParam("url") String url) {
-        return this.assetDownloadService.assetDownload(url);
+    public ResponseEntity<Resource> downloadSpecificAsset(@RequestParam("url") String url) {
+        return this.assetDownloadService.downloadSpecificAsset(url);
     }
 }

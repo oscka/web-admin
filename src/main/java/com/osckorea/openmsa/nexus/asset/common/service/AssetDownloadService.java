@@ -1,6 +1,7 @@
 package com.osckorea.openmsa.nexus.asset.common.service;
 
 import java.net.URI;
+import javax.servlet.http.HttpServletResponse;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -14,7 +15,7 @@ import lombok.RequiredArgsConstructor;
 public class AssetDownloadService {
     private final AssetDownloadFeignClient assetDownloadFeignClient;
 
-    public ResponseEntity<Resource> assetDownload(String assetDownloadUrl) {
+    public ResponseEntity<Resource> downloadSpecificAsset(String assetDownloadUrl) {
         String[] splitAssetUrlString = assetDownloadUrl.split("/");
 
         String fileName = splitAssetUrlString[splitAssetUrlString.length - 1];
