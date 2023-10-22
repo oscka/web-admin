@@ -1,0 +1,4 @@
+### 1. nexus에 로그인한 사용자 정보 조회 
+GET /nexus/users
+Host: localhost:8080
+Authorization: Basic VGluYQ== : MTIzNA==
