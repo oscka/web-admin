@@ -66,8 +66,12 @@ dependencies {
 	implementation 'org.springframework.cloud:spring-cloud-starter-stream-kafka' 	// Kafka
 	implementation 'org.springframework.boot:spring-boot-starter-log4j2' 			// log4j2
 
+	implementation 'org.springframework.ldap:spring-ldap-core'						// Spring LDAP Core
+
+	implementation 'org.elasticsearch.client:elasticsearch-rest-high-level-client'	// Elasticsearch REST High Level Client 
+
 	// ----- OrientDB Dependencies for Nexus Repository 3 OreintDB Connection
-	// implementation 'com.orientechnologies:orientdb-core:2.2.37'						// OrientDB Core
+	// implementation 'com.orientechnologies:orientdb-core:2.2.37'					// OrientDB Core
 	// -----
 
 	implementation 'org.springframework.boot:spring-boot-starter-quartz'			// Spring Quartz
